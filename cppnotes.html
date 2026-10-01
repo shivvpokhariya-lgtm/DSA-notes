@@ -1,0 +1,2409 @@
+
+
+Cpp dsa mastery · HTML
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>C++ and DSA Mastery</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Spectral:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]}}</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-chtml.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<style>
+:root{--bg:#fbfaf7;--fg:#1d2327;--mut:#5d686f;--line:#e2dfd6;--card:#fff;--code:#f3f1ea;--teal:#0f766e;--tealbg:#e6f4f1;--amber:#b45309;--amberbg:#fdf3e1;--rose:#be123c;--rosebg:#fdebee;--violet:#6d28d9;--violetbg:#f0eafc;--side:#f4f2ec}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14181b;--fg:#e6e8ea;--mut:#9aa5ad;--line:#2a3238;--card:#1b2024;--code:#1f252a;--teal:#4fd1c5;--tealbg:#12302e;--amber:#f6ad55;--amberbg:#33270f;--rose:#fb7185;--rosebg:#37171e;--violet:#a78bfa;--violetbg:#241c3a;--side:#191e22}}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 'Spectral',Georgia,serif}
+.wrap{display:grid;grid-template-columns:290px minmax(0,1fr)}
+nav{position:sticky;top:0;height:100vh;overflow:auto;background:var(--side);border-right:1px solid var(--line);padding:18px 14px;font:13.5px/1.35 'IBM Plex Sans',sans-serif}
+nav b{display:block;font:600 15px 'Spectral';margin-bottom:10px}
+nav a{display:block;color:var(--mut);text-decoration:none;padding:4px 8px;border-radius:5px}
+nav a:hover{background:var(--line);color:var(--fg)}
+nav a.l1{font-weight:600;color:var(--fg);margin-top:8px}nav a.l2{padding-left:20px}
+main{max-width:860px;padding:30px 28px 120px;margin:0 auto;width:100%;box-sizing:border-box}
+h1,h2,h3{font-family:'Spectral',serif;line-height:1.25}
+h1{font-size:2rem;border-bottom:2px solid var(--teal);padding-bottom:6px;margin-top:3rem}
+h2{font-size:1.45rem;margin-top:2.2rem;color:var(--teal)}h3{font-size:1.15rem;margin-top:1.6rem}
+a{color:var(--teal)}
+code,pre{font-family:'IBM Plex Mono',monospace;font-size:.85em}
+code{background:var(--code);padding:1px 5px;border-radius:4px}
+pre{background:var(--code);border:1px solid var(--line);border-radius:8px;padding:14px;overflow:auto;line-height:1.5}pre code{background:none;padding:0}
+pre.mermaid{background:var(--card);text-align:center}
+table{border-collapse:collapse;width:100%;display:block;overflow-x:auto;font:14.5px/1.45 'IBM Plex Sans',sans-serif}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}th{background:var(--code)}
+.callout{border-left:4px solid;border-radius:8px;padding:10px 16px;margin:1.2rem 0;font-size:.98em}
+.callout .ct{font:600 12.5px 'IBM Plex Sans',sans-serif;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.callout.teal{background:var(--tealbg);border-color:var(--teal)}.callout.teal .ct{color:var(--teal)}
+.callout.amber{background:var(--amberbg);border-color:var(--amber)}.callout.amber .ct{color:var(--amber)}
+.callout.rose{background:var(--rosebg);border-color:var(--rose)}.callout.rose .ct{color:var(--rose)}
+.callout.violet{background:var(--violetbg);border-color:var(--violet)}.callout.violet .ct{color:var(--violet)}
+.callout p{margin:.4em 0}
+details{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px 14px;margin:.7rem 0}summary{cursor:pointer;font:600 14px 'IBM Plex Sans',sans-serif;color:var(--teal)}
+hr{border:0;border-top:1px solid var(--line);margin:2.5rem 0}
+@media(max-width:860px){.wrap{display:block}nav{position:static;height:auto;max-height:220px;border-right:0;border-bottom:1px solid var(--line)}main{padding:20px 16px 80px}}
+</style></head><body>
+<div class="wrap"><nav><b>C++ &amp; DSA Mastery</b><a class="l1" href="#c-dsa-mastery-from-zero-to-master">C++ &amp; DSA Mastery — From Zero to Master</a>
+<a class="l2" href="#how-to-use-this-course">How to use this course</a>
+<a class="l1" href="#part-i-the-language">PART I — THE LANGUAGE</a>
+<a class="l1" href="#module-0-what-is-a-computer-really">Module 0 — What is a computer, really?</a>
+<a class="l2" href="#01-a-computer-is-a-very-fast-very-dumb-clerk">0.1 A computer is a very fast, very dumb clerk</a>
+<a class="l2" href="#02-why-cant-the-cpu-read-c">0.2 Why can&#x27;t the CPU read C++?</a>
+<a class="l1" href="#module-1-basics-variables-types-operators-io">Module 1 — Basics: variables, types, operators, I/O</a>
+<a class="l2" href="#11-your-first-program-every-character-explained">1.1 Your first program, every character explained</a>
+<a class="l2" href="#12-variables-named-mailboxes">1.2 Variables: named mailboxes</a>
+<a class="l2" href="#13-operators">1.3 Operators</a>
+<a class="l2" href="#14-input-and-output">1.4 Input and output</a>
+<a class="l2" href="#15-type-conversion-casting">1.5 Type conversion (casting)</a>
+<a class="l1" href="#module-2-control-flow-making-decisions-and-repeating">Module 2 — Control flow: making decisions and repeating</a>
+<a class="l2" href="#21-if-else">2.1 if / else</a>
+<a class="l2" href="#22-switch">2.2 switch</a>
+<a class="l2" href="#23-loops">2.3 Loops</a>
+<a class="l2" href="#24-thinking-about-loops-invariants">2.4 Thinking about loops: invariants</a>
+<a class="l2" href="#25-worked-examples">2.5 Worked examples</a>
+<a class="l1" href="#module-3-functions-giving-a-recipe-a-name">Module 3 — Functions: giving a recipe a name</a>
+<a class="l2" href="#31-the-call-stack-what-really-happens">3.1 The call stack: what really happens</a>
+<a class="l2" href="#32-pass-by-value-vs-by-reference">3.2 Pass by value vs by reference</a>
+<a class="l2" href="#33-declaration-vs-definition-overloading-defaults">3.3 Declaration vs definition, overloading, defaults</a>
+<a class="l2" href="#34-scope-and-lifetime">3.4 Scope and lifetime</a>
+<a class="l2" href="#35-inline-constexpr-lambdas-preview">3.5 inline, constexpr, lambdas (preview)</a>
+<a class="l1" href="#module-4-arrays-strings-and-vectors-many-boxes-in-a-row">Module 4 — Arrays, strings, and vectors: many boxes in a row</a>
+<a class="l2" href="#41-arrays">4.1 Arrays</a>
+<a class="l2" href="#42-stdvector-the-array-that-can-grow">4.2 std::vector — the array that can grow</a>
+<a class="l2" href="#43-strings">4.3 Strings</a>
+<a class="l2" href="#44-putting-it-together-prefix-sums-first-real-dsa-idea">4.4 Putting it together: prefix sums (first real DSA idea)</a>
+<a class="l1" href="#module-5-pointers-references-and-memory">Module 5 — Pointers, references, and memory</a>
+<a class="l2" href="#51-pointers">5.1 Pointers</a>
+<a class="l2" href="#52-pointers-and-arrays-are-cousins">5.2 Pointers and arrays are cousins</a>
+<a class="l2" href="#53-references-a-safer-cousin">5.3 References: a safer cousin</a>
+<a class="l2" href="#54-the-two-memory-regions-stack-vs-heap">5.4 The two memory regions: stack vs heap</a>
+<a class="l2" href="#55-pointers-to-structs-and-the-arrow">5.5 Pointers to structs and the arrow</a>
+<a class="l1" href="#module-6-classes-and-object-oriented-programming">Module 6 — Classes and Object-Oriented Programming</a>
+<a class="l2" href="#61-structs-and-classes">6.1 Structs and classes</a>
+<a class="l2" href="#62-constructors-and-destructors-birth-and-death">6.2 Constructors and destructors — birth and death</a>
+<a class="l2" href="#63-the-copy-problem-and-the-rule-of-threefive">6.3 The copy problem, and the Rule of Three/Five</a>
+<a class="l2" href="#64-inheritance-and-polymorphism">6.4 Inheritance and polymorphism</a>
+<a class="l2" href="#65-operator-overloading-and-this">6.5 Operator overloading and this</a>
+<a class="l1" href="#module-7-templates-and-the-stl">Module 7 — Templates and the STL</a>
+<a class="l2" href="#71-templates-write-once-for-every-type">7.1 Templates: write once for every type</a>
+<a class="l2" href="#72-the-stl-map">7.2 The STL map</a>
+<a class="l2" href="#73-containers-and-what-they-cost">7.3 Containers — and what they cost</a>
+<a class="l2" href="#74-algorithms-and-lambdas">7.4 Algorithms and lambdas</a>
+<a class="l1" href="#module-8-modern-c-smart-pointers-and-move-semantics">Module 8 — Modern C++: smart pointers and move semantics</a>
+<a class="l2" href="#81-smart-pointers-raii-applied-to-new">8.1 Smart pointers (RAII applied to new)</a>
+<a class="l2" href="#82-move-semantics-steal-dont-copy">8.2 Move semantics — &quot;steal, don&#x27;t copy&quot;</a>
+<a class="l2" href="#83-other-modern-conveniences-worth-knowing">8.3 Other modern conveniences worth knowing</a>
+<a class="l1" href="#part-ii-data-structures-algorithms">PART II — DATA STRUCTURES &amp; ALGORITHMS</a>
+<a class="l1" href="#module-9-complexity-measuring-an-algorithm-without-a-stopwatch">Module 9 — Complexity: measuring an algorithm without a stopwatch</a>
+<a class="l2" href="#91-counting-steps">9.1 Counting steps</a>
+<a class="l2" href="#92-other-notations-space-and-amortised">9.2 Other notations, space, and amortised</a>
+<a class="l1" href="#module-10-recursion-and-backtracking">Module 10 — Recursion and backtracking</a>
+<a class="l2" href="#101-fibonacci-and-why-naive-recursion-is-a-disaster">10.1 Fibonacci — and why naive recursion is a disaster</a>
+<a class="l2" href="#102-fast-exponentiation-binary-exponentiation">10.2 Fast exponentiation (binary exponentiation)</a>
+<a class="l2" href="#103-backtracking-exploring-choices">10.3 Backtracking — exploring choices</a>
+<a class="l1" href="#module-11-searching-and-sorting">Module 11 — Searching and sorting</a>
+<a class="l2" href="#111-binary-search-the-art-of-halving">11.1 Binary search — the art of halving</a>
+<a class="l2" href="#112-sorting-the-algorithms-and-why-they-cost-what-they-cost">11.2 Sorting — the algorithms and why they cost what they cost</a>
+<a class="l1" href="#module-12-linear-structures-lists-stacks-queues">Module 12 — Linear structures: lists, stacks, queues</a>
+<a class="l2" href="#121-linked-list-a-chain-of-nodes">12.1 Linked list — a chain of nodes</a>
+<a class="l2" href="#122-stack-last-in-first-out">12.2 Stack — Last In, First Out</a>
+<a class="l2" href="#123-queue-and-deque">12.3 Queue and deque</a>
+<a class="l2" href="#124-two-pointers-and-sliding-window">12.4 Two pointers and sliding window</a>
+<a class="l1" href="#module-13-hashing-and-heaps">Module 13 — Hashing and heaps</a>
+<a class="l2" href="#131-hash-tables">13.1 Hash tables</a>
+<a class="l2" href="#132-heap-priority-queue">13.2 Heap / priority queue</a>
+<a class="l1" href="#module-14-trees">Module 14 — Trees</a>
+<a class="l2" href="#141-traversals-and-why-theyre-recursive">14.1 Traversals — and why they&#x27;re recursive</a>
+<a class="l2" href="#142-binary-search-tree-bst">14.2 Binary Search Tree (BST)</a>
+<a class="l2" href="#143-trie-prefix-tree">14.3 Trie (prefix tree)</a>
+<a class="l2" href="#144-range-queries-fenwick-tree-and-segment-tree">14.4 Range queries: Fenwick tree and segment tree</a>
+<a class="l1" href="#module-15-graphs">Module 15 — Graphs</a>
+<a class="l2" href="#151-representing-a-graph">15.1 Representing a graph</a>
+<a class="l2" href="#152-bfs-explore-in-rings-shortest-path-in-unweighted-graphs">15.2 BFS — explore in rings (shortest path in unweighted graphs)</a>
+<a class="l2" href="#153-dfs-go-deep-then-back-up">15.3 DFS — go deep, then back up</a>
+<a class="l2" href="#154-topological-sort-ordering-with-prerequisites">15.4 Topological sort (ordering with prerequisites)</a>
+<a class="l2" href="#155-shortest-paths-with-weights">15.5 Shortest paths with weights</a>
+<a class="l2" href="#156-disjoint-set-union-union-find-and-mst">15.6 Disjoint Set Union (Union-Find) and MST</a>
+<a class="l1" href="#module-16-dynamic-programming-dp">Module 16 — Dynamic Programming (DP)</a>
+<a class="l2" href="#161-top-down-memoisation-vs-bottom-up-tabulation">16.1 Top-down (memoisation) vs bottom-up (tabulation)</a>
+<a class="l2" href="#162-classic-1-d-problems">16.2 Classic 1-D problems</a>
+<a class="l2" href="#163-two-dimensional-dp">16.3 Two-dimensional DP</a>
+<a class="l2" href="#164-other-dp-shapes-know-they-exist">16.4 Other DP shapes (know they exist)</a>
+<a class="l1" href="#module-17-greedy-bits-math-and-strings">Module 17 — Greedy, bits, math and strings</a>
+<a class="l2" href="#171-greedy-algorithms">17.1 Greedy algorithms</a>
+<a class="l2" href="#172-bit-manipulation">17.2 Bit manipulation</a>
+<a class="l2" href="#173-number-theory-essentials">17.3 Number theory essentials</a>
+<a class="l2" href="#174-string-algorithms">17.4 String algorithms</a>
+<a class="l1" href="#module-18-contest-toolkit-debugging-and-the-roadmap">Module 18 — Contest toolkit, debugging, and the roadmap</a>
+<a class="l2" href="#181-a-solid-template">18.1 A solid template</a>
+<a class="l2" href="#182-how-to-attack-a-new-problem-the-feynman-method-for-algorithms">18.2 How to attack a new problem (the Feynman method for algorithms)</a>
+<a class="l2" href="#183-debugging">18.3 Debugging</a>
+<a class="l2" href="#184-the-roadmap-what-to-do-next">18.4 The roadmap — what to do next</a>
+<a class="l1" href="#practice-sets-with-answers-hidden">Practice sets (with answers hidden)</a>
+<a class="l1" href="#appendix-a-symbol-and-keyword-glossary">Appendix A — Symbol and keyword glossary</a>
+<a class="l1" href="#appendix-b-complexity-cheat-sheet">Appendix B — Complexity cheat sheet</a></nav><main>
+<h1 id="c-dsa-mastery-from-zero-to-master">C++ &amp; DSA Mastery — From Zero to Master</h1>
+<div class="callout teal">
+<div class="ct">What this is</div>
+<p>One file. Zero prerequisites. By the end you should be able to <em>read</em> any C++ program, <em>write</em> your own, and solve interview and contest-level DSA problems — and, more importantly, you will know <strong>why</strong> every line behaves the way it does.</p>
+<p><strong>The rule of this course:</strong> nothing is "just how it is." Every rule has a reason. If I ever say "just memorise this", I have failed — stop and ask "but <em>why</em>?" (A good scientist's habit, and a good programmer's.)</p>
+</div>
+<h2 id="how-to-use-this-course">How to use this course</h2>
+<div class="callout amber">
+<div class="ct">The only way to learn programming</div>
+<p>You cannot learn to swim by reading about water. For <strong>every</strong> program in this file:
+1. Read it. 2. <strong>Predict</strong> the output on paper. 3. Type it (don't paste). 4. Run it. 5. If the output surprised you — <em>that's the lesson</em>. Dig into the surprise.</p>
+<p>Reading code feels like understanding. Writing code <em>is</em> understanding.</p>
+</div>
+<p><strong>Setup (5 minutes).</strong> You need a compiler. Install <code>g++</code> (Linux: <code>sudo apt install g++</code>; Mac: <code>xcode-select --install</code>; Windows: install MSYS2/MinGW or use WSL). Or use an online one like <a href="https://godbolt.org">godbolt.org</a> / <a href="https://www.onlinegdb.com">onlinegdb.com</a>.</p>
+<pre><code class="language-bash">g++ -std=c++17 -O2 -Wall -Wextra -o prog prog.cpp &amp;&amp; ./prog
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Meaning (why you want it)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-std=c++17</code></td>
+<td>Which version of the language rules to use.</td>
+</tr>
+<tr>
+<td><code>-O2</code></td>
+<td>Optimise: the compiler rewrites your code to run faster.</td>
+</tr>
+<tr>
+<td><code>-Wall -Wextra</code></td>
+<td>Turn on warnings. The compiler is a helpful friend who spots your mistakes — let it talk.</td>
+</tr>
+<tr>
+<td><code>-fsanitize=address,undefined</code></td>
+<td>(Debugging) catches memory bugs while running. Use it when something is weird.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Course map</strong></p>
+<pre class="mermaid">flowchart LR
+  A[0 Machine] --&gt; B[1 Basics] --&gt; C[2 Control flow] --&gt; D[3 Functions]
+  D --&gt; E[4 Arrays &amp; Strings] --&gt; F[5 Pointers &amp; Memory] --&gt; G[6 OOP]
+  G --&gt; H[7 Templates &amp; STL] --&gt; I[8 Modern C++]
+  I --&gt; J[9 Complexity] --&gt; K[10 Recursion]
+  K --&gt; L[11 Sorting &amp; Searching] --&gt; M[12 Linear structures]
+  M --&gt; N[13 Hashing &amp; Heaps] --&gt; O[14 Trees] --&gt; P[15 Graphs]
+  P --&gt; Q[16 Dynamic Programming] --&gt; R[17 Greedy, Bits, Math, Strings]
+  R --&gt; S[18 Contest toolkit &amp; roadmap]
+</pre>
+<hr />
+<h1 id="part-i-the-language">PART I — THE LANGUAGE</h1>
+<h1 id="module-0-what-is-a-computer-really">Module 0 — What is a computer, really?</h1>
+<h2 id="01-a-computer-is-a-very-fast-very-dumb-clerk">0.1 A computer is a very fast, very dumb clerk</h2>
+<div class="callout rose">
+<div class="ct">Explain it like I'm 8</div>
+<p>Imagine a huge wall of mailboxes. Every mailbox has a <strong>number</strong> (its address) and holds a tiny note. Next to the wall sits a clerk who can only do things like: <em>"read the note in box 5"</em>, <em>"add two notes"</em>, <em>"write a new note into box 9"</em>, <em>"if this note is zero, jump to instruction 40."</em> That's it. The clerk is stupid but does <strong>billions</strong> of these per second.</p>
+<p>The wall is <strong>memory (RAM)</strong>. The clerk is the <strong>CPU</strong>. A <strong>program</strong> is a long list of instructions for the clerk.</p>
+</div>
+<p><strong>Why do computers use only 0 and 1?</strong> A wire is either carrying voltage or it isn't. Two states are easy to build and <em>very</em> reliable (no confusion between "almost on" and "a bit on"). Each 0/1 is a <strong>bit</strong>. Eight bits make a <strong>byte</strong> (one mailbox holds one byte).</p>
+<p>How many different notes can a byte hold? Each bit has 2 choices, 8 bits: $2^8 = 256$. So a byte holds 0…255.</p>
+<div class="callout teal">
+<div class="ct">Counting in binary</div>
+<p>We count in tens because we have ten fingers: the digit's <em>place</em> is worth 1, 10, 100, … Binary is the same with two fingers: places are worth 1, 2, 4, 8, 16, …
+<code>1011₂ = 8 + 0 + 2 + 1 = 11₁₀</code>.
+To convert 13 to binary: 13 = 8+4+1 → <code>1101</code>.</p>
+</div>
+<h2 id="02-why-cant-the-cpu-read-c">0.2 Why can't the CPU read C++?</h2>
+<p>The CPU understands only <strong>machine code</strong> — numbers meaning "add", "load", "jump". Writing that by hand is miserable, so humans invented <strong>languages</strong> like C++ and a translator called the <strong>compiler</strong>.</p>
+<pre class="mermaid">flowchart LR
+  S[your .cpp text] --&gt;|preprocessor| P[expanded text]
+  P --&gt;|compiler| O[object file .o&lt;br/&gt;machine code pieces]
+  O --&gt;|linker| E[executable program]
+  L[library code&lt;br/&gt;e.g. iostream] --&gt; E
+</pre>
+<ol>
+<li><strong>Preprocessor</strong>: handles lines starting with <code>#</code>. <code>#include &lt;iostream&gt;</code> literally <em>pastes</em> the contents of that file in. (Dumb copy-paste, before anything is understood.)</li>
+<li><strong>Compiler</strong>: checks your grammar (syntax) and types, then translates to machine code. <em>This is where "compile errors" come from.</em></li>
+<li><strong>Linker</strong>: stitches your pieces and library pieces into one program. <em>"undefined reference" errors come from here</em> — you promised a function existed but never supplied it.</li>
+<li><strong>Run</strong>: the OS loads the program into memory and the CPU executes it. <em>"Segmentation fault" and wrong answers come from here</em> (runtime errors).</li>
+</ol>
+<div class="callout amber">
+<div class="ct">Why does C++ have a compile step at all (unlike Python)?</div>
+<p>Because translation happens <strong>once, ahead of time</strong>, with the compiler free to spend seconds optimising. Python translates <em>while running</em>, repeatedly. That's why C++ is typically 10–100× faster, and why competitive programmers love it. The price: you must be precise, and C++ trusts you not to make mistakes — it will <strong>not</strong> stop you from stepping off a cliff.</p>
+</div>
+<hr />
+<h1 id="module-1-basics-variables-types-operators-io">Module 1 — Basics: variables, types, operators, I/O</h1>
+<h2 id="11-your-first-program-every-character-explained">1.1 Your first program, every character explained</h2>
+<pre><code class="language-cpp">#include &lt;iostream&gt;          // (1)
+using namespace std;         // (2)
+ 
+int main() {                 // (3)
+    cout &lt;&lt; &quot;Hello, world!&quot; &lt;&lt; endl;   // (4)
+    return 0;                // (5)
+}
+</code></pre>
+<ol>
+<li><code>#include &lt;iostream&gt;</code> — paste in the declarations for input/output (<code>cin</code>, <code>cout</code>). Without it the compiler has never heard of <code>cout</code>.</li>
+<li><code>using namespace std;</code> — the standard library lives in a "family name" <code>std</code>. Fully you'd write <code>std::cout</code>. This line says "assume the family name <code>std</code> so I can drop it." <em>Fine for learning/contests; in big projects people avoid it because two libraries might both define a name <code>sort</code>, causing confusion.</em></li>
+<li><code>int main()</code> — <strong>every</strong> program starts here. <code>int</code> means it hands back a whole number to the OS when done.</li>
+<li><code>cout &lt;&lt; ...</code> — "character out". <code>&lt;&lt;</code> is the arrow pushing data into the output stream. <code>endl</code> ends the line (and flushes — see §1.8).</li>
+<li><code>return 0;</code> — tells the OS "all went fine". (Non-zero means error. Writing it in <code>main</code> is optional; the compiler adds it.)</li>
+</ol>
+<p>Every statement ends with <code>;</code> — a <strong>period</strong> for the compiler. Why? So the compiler knows where one instruction ends even if you spread it over many lines.</p>
+<h2 id="12-variables-named-mailboxes">1.2 Variables: named mailboxes</h2>
+<pre><code class="language-cpp">int age = 17;
+</code></pre>
+<p>Read it as: <em>"Reserve a box big enough for a whole number, call it <code>age</code>, put 17 in it."</em></p>
+<p>A variable has four things — know them cold:</p>
+<table>
+<thead>
+<tr>
+<th>Thing</th>
+<th>For <code>int age = 17;</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><code>age</code></td>
+</tr>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>int</code> (decides size and how bits are interpreted)</td>
+</tr>
+<tr>
+<td><strong>Value</strong></td>
+<td>17</td>
+</tr>
+<tr>
+<td><strong>Address</strong></td>
+<td>where in memory the box lives (e.g. <code>0x7ffc...</code>)</td>
+</tr>
+</tbody>
+</table>
+<div class="callout amber">
+<div class="ct">Why types exist</div>
+<p>A byte holding <code>01000001</code> is just 8 bits. Is it the number 65? The letter <code>'A'</code>? Part of a decimal number? <strong>The bits don't know.</strong> The <em>type</em> tells the compiler how to interpret them. Types are the dictionary.</p>
+</div>
+<h3 id="fundamental-types">Fundamental types</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Typical size</th>
+<th>Range / use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bool</code></td>
+<td>1 byte</td>
+<td><code>true</code> / <code>false</code></td>
+</tr>
+<tr>
+<td><code>char</code></td>
+<td>1 byte</td>
+<td>one character, as a small number (−128..127)</td>
+</tr>
+<tr>
+<td><code>short</code></td>
+<td>2 bytes</td>
+<td>±32 767</td>
+</tr>
+<tr>
+<td><code>int</code></td>
+<td>4 bytes</td>
+<td>±2 147 483 647 (about ±2.1×10⁹)</td>
+</tr>
+<tr>
+<td><code>long long</code></td>
+<td>8 bytes</td>
+<td>±9.2×10¹⁸</td>
+</tr>
+<tr>
+<td><code>unsigned int</code></td>
+<td>4 bytes</td>
+<td>0 … 4 294 967 295</td>
+</tr>
+<tr>
+<td><code>float</code></td>
+<td>4 bytes</td>
+<td>~7 decimal digits of precision</td>
+</tr>
+<tr>
+<td><code>double</code></td>
+<td>8 bytes</td>
+<td>~15–16 decimal digits</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;climits&gt;
+using namespace std;
+int main() {
+    cout &lt;&lt; &quot;int: &quot; &lt;&lt; sizeof(int) &lt;&lt; &quot; bytes\n&quot;;
+    cout &lt;&lt; &quot;long long: &quot; &lt;&lt; sizeof(long long) &lt;&lt; &quot; bytes\n&quot;;
+    cout &lt;&lt; &quot;INT_MAX = &quot; &lt;&lt; INT_MAX &lt;&lt; &quot;\n&quot;;
+    cout &lt;&lt; &quot;LLONG_MAX = &quot; &lt;&lt; LLONG_MAX &lt;&lt; &quot;\n&quot;;
+}
+</code></pre>
+<div class="callout rose">
+<div class="ct">Sizes are "typical", not guaranteed</div>
+<p>The standard only promises <code>sizeof(char)==1</code> and <code>short ≤ int ≤ long ≤ long long</code>. On virtually all modern machines <code>int</code> is 4 bytes, but that's a fact about the machine. Use <code>sizeof</code> or fixed-width types (<code>int32_t</code>, <code>int64_t</code> from <code>&lt;cstdint&gt;</code>) when it matters.</p>
+</div>
+<h3 id="121-why-does-int-have-a-limit-and-what-happens-when-you-exceed-it">1.2.1 Why does <code>int</code> have a limit? And what happens when you exceed it?</h3>
+<p>4 bytes = 32 bits = $2^{32}$ ≈ 4.29 billion patterns. Half are used for negatives, so −2³¹ … 2³¹−1.</p>
+<p><strong>How negatives are stored — two's complement.</strong> Imagine an odometer with 3 wheels showing 000…999. Roll back one from 000 and you get 999. So <em>999 can pretend to be −1</em>. Computers do this in binary: with 8 bits, <code>11111111</code> is −1, <code>11111110</code> is −2, …, <code>10000000</code> is −128. The top bit tells the sign. Why this trick? Because then <strong>the same adder circuit adds positive and negative numbers</strong> — no special hardware for subtraction. Beautiful.</p>
+<pre><code>8-bit signed:  01111111 = 127   +1 →  10000000 = -128   (wraps!)
+</code></pre>
+<div class="callout rose">
+<div class="ct">Overflow</div>
+<p><code>int x = INT_MAX; x = x + 1;</code> is <strong>undefined behaviour</strong> for signed integers: the standard says "anything may happen" (in practice it wraps to negative, but the <em>compiler</em> is allowed to assume it never happens and optimise accordingly, producing bizarre results). For <strong>unsigned</strong> types, wrapping is well-defined (arithmetic modulo $2^{n}$).
+<strong>Contest rule of thumb:</strong> if a value might exceed ~2×10⁹ (e.g. a sum of 10⁵ numbers each up to 10⁵, or a product), use <code>long long</code>.</p>
+</div>
+<h3 id="122-float-and-double-why-01-02-03">1.2.2 <code>float</code> and <code>double</code>: why 0.1 + 0.2 ≠ 0.3</h3>
+<p>You can write 1/3 in decimal only as 0.3333… (infinite). Similarly, in <strong>binary</strong>, 0.1 is <code>0.000110011001100…</code> forever. A <code>double</code> has 53 binary digits of significand, so it must <em>cut off</em> — a tiny error.</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+using namespace std;
+int main() {
+    double a = 0.1 + 0.2;
+    cout &lt;&lt; setprecision(20) &lt;&lt; a &lt;&lt; &quot;\n&quot;;   // 0.30000000000000004441
+    cout &lt;&lt; (a == 0.3 ? &quot;equal&quot; : &quot;NOT equal&quot;) &lt;&lt; &quot;\n&quot;;
+    // Right way to compare: allow a tiny tolerance
+    cout &lt;&lt; (abs(a - 0.3) &lt; 1e-9 ? &quot;close enough&quot; : &quot;different&quot;) &lt;&lt; &quot;\n&quot;;
+}
+</code></pre>
+<div class="callout amber">
+<div class="ct">Rule</div>
+<p>Never compare floating-point numbers with <code>==</code>. Compare <code>abs(a-b) &lt; eps</code>. Prefer integers whenever the problem allows.</p>
+</div>
+<h3 id="123-char-is-secretly-a-number">1.2.3 <code>char</code> is secretly a number</h3>
+<pre><code class="language-cpp">char c = 'A';
+cout &lt;&lt; c &lt;&lt; &quot; &quot; &lt;&lt; (int)c &lt;&lt; &quot;\n&quot;;   // A 65
+cout &lt;&lt; (char)(c + 1) &lt;&lt; &quot;\n&quot;;         // B
+</code></pre>
+<p>Computers store letters as numbers via <strong>ASCII</strong>: <code>'A'</code>=65 … <code>'Z'</code>=90, <code>'a'</code>=97 … <code>'z'</code>=122, <code>'0'</code>=48 … <code>'9'</code>=57. This makes the classic tricks work:
+- digit char → number: <code>'7' - '0'</code> = 55 − 48 = <strong>7</strong>
+- lowercase → uppercase: <code>c - 'a' + 'A'</code> (difference is 32)
+- letter index: <code>c - 'a'</code> gives 0..25 (used constantly in string problems)</p>
+<h3 id="124-bool-auto-const">1.2.4 <code>bool</code>, <code>auto</code>, <code>const</code></h3>
+<pre><code class="language-cpp">bool isEven = (10 % 2 == 0);   // true; prints as 1
+auto x = 3.5;                  // compiler deduces double
+const int MOD = 1'000'000'007; // can never be changed; ' is a digit separator
+</code></pre>
+<div class="callout amber">
+<div class="ct">Why `const`?</div>
+<p>Two reasons: (1) it documents intent — "this never changes"; (2) the compiler <strong>enforces</strong> it, so a typo that modifies it becomes a compile error instead of a 3 a.m. bug.</p>
+</div>
+<h3 id="125-initialisation-the-trap">1.2.5 Initialisation: the trap</h3>
+<pre><code class="language-cpp">int a;        // UNINITIALISED local: contains leftover garbage bits!
+int b = 0;    // good
+int c{};      // also 0 (brace init)
+int d{5};     // 5, and braces refuse narrowing: int e{3.7}; is an ERROR (good!)
+</code></pre>
+<div class="callout amber">
+<div class="ct">Why isn't everything auto-zeroed?</div>
+<p>Zeroing costs time, and C++'s philosophy is <em>"you don't pay for what you don't use."</em> The box just holds whatever was there before. <strong>Global</strong> variables, however, <em>are</em> zero-initialised (they live in a special region cleared at startup). Always initialise locals.</p>
+</div>
+<h2 id="13-operators">1.3 Operators</h2>
+<pre><code class="language-cpp">int a = 7, b = 2;
+a + b   // 9
+a - b   // 5
+a * b   // 14
+a / b   // 3    ← integer division!
+a % b   // 1    ← remainder
+</code></pre>
+<div class="callout amber">
+<div class="ct">Why is `7/2 == 3`?</div>
+<p>If <strong>both</strong> operands are <code>int</code>, the result type is <code>int</code>; the fractional part is <em>truncated toward zero</em> (so <code>-7/2 == -3</code>). The compiler decides the operation by looking at the <em>types</em>, not the values. To get 3.5: <code>7.0/2</code> or <code>(double)a/b</code>.
+Gotcha: <code>double r = 7/2;</code> gives 3.0, because the division happens <em>first</em> in integers.</p>
+</div>
+<p><strong>Remainder with negatives:</strong> <code>-7 % 3 == -1</code> in C++ (sign follows the left operand), unlike Python. To get a non-negative remainder: <code>((x % m) + m) % m</code>.</p>
+<p><strong>Shortcuts:</strong> <code>x += 5</code> ≡ <code>x = x + 5</code>. <code>i++</code> means "add 1" (post: use old value then add; pre <code>++i</code>: add then use). In a standalone statement they're identical; prefer <code>++i</code>.</p>
+<p><strong>Comparison:</strong> <code>== != &lt; &gt; &lt;= &gt;=</code>. <strong>Logic:</strong> <code>&amp;&amp;</code> (and), <code>||</code> (or), <code>!</code> (not).</p>
+<div class="callout rose">
+<div class="ct">`=` vs `==`</div>
+<p><code>if (x = 5)</code> <em>assigns</em> 5 to x and is always true. Classic bug. <code>-Wall</code> warns you. (Some people write <code>5 == x</code> so a typo becomes an error.)</p>
+</div>
+<p><strong>Short-circuit:</strong> in <code>A &amp;&amp; B</code>, if A is false B is <strong>never evaluated</strong> (the answer is already false). Why does it matter? <code>if (i &lt; n &amp;&amp; arr[i] &gt; 0)</code> is safe — when <code>i &gt;= n</code>, the array is never touched. Swap the order and you read out of bounds.</p>
+<h3 id="131-bitwise-operators-essential-for-dsa">1.3.1 Bitwise operators (essential for DSA)</h3>
+<p>Operate on the <em>individual bits</em>:</p>
+<table>
+<thead>
+<tr>
+<th>Op</th>
+<th>Meaning</th>
+<th>Example (4-bit)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&amp;</code></td>
+<td>AND — 1 if both 1</td>
+<td><code>1100 &amp; 1010 = 1000</code></td>
+</tr>
+<tr>
+<td><code>\|</code></td>
+<td>OR — 1 if either</td>
+<td><code>1100 \| 1010 = 1110</code></td>
+</tr>
+<tr>
+<td><code>^</code></td>
+<td>XOR — 1 if different</td>
+<td><code>1100 ^ 1010 = 0110</code></td>
+</tr>
+<tr>
+<td><code>~</code></td>
+<td>NOT — flip all</td>
+<td><code>~0101 = 1010</code></td>
+</tr>
+<tr>
+<td><code>&lt;&lt;</code></td>
+<td>shift left</td>
+<td><code>0011 &lt;&lt; 2 = 1100</code> (×4)</td>
+</tr>
+<tr>
+<td><code>&gt;&gt;</code></td>
+<td>shift right</td>
+<td><code>1100 &gt;&gt; 2 = 0011</code> (÷4)</td>
+</tr>
+</tbody>
+</table>
+<div class="callout amber">
+<div class="ct">Why is `x &lt;&lt; k` the same as `x * 2^k`?</div>
+<p>In decimal, shifting digits left (<code>37</code> → <code>370</code>) multiplies by 10. Same idea in base 2, multiplying by 2 per shift.</p>
+</div>
+<p>Useful idioms (we'll prove why later in Module 17):
+- is bit <code>i</code> set? <code>(x &gt;&gt; i) &amp; 1</code>
+- set bit <code>i</code>: <code>x |= (1 &lt;&lt; i)</code>; clear: <code>x &amp;= ~(1 &lt;&lt; i)</code>; toggle: <code>x ^= (1 &lt;&lt; i)</code>
+- is <code>x</code> a power of two? <code>x &gt; 0 &amp;&amp; (x &amp; (x-1)) == 0</code></p>
+<h3 id="132-precedence-who-goes-first">1.3.2 Precedence (who goes first)</h3>
+<p><code>* / %</code> before <code>+ -</code>; comparison before <code>&amp;&amp;</code> before <code>||</code>. Bitwise <code>&amp;</code> has <em>lower</em> precedence than <code>==</code>: <code>x &amp; 1 == 0</code> means <code>x &amp; (1==0)</code> — a bug! <strong>When in doubt, use parentheses.</strong> They cost nothing.</p>
+<h2 id="14-input-and-output">1.4 Input and output</h2>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+int main() {
+    int n;
+    cout &lt;&lt; &quot;Enter a number: &quot;;
+    cin &gt;&gt; n;                      // reads whitespace-separated token
+    cout &lt;&lt; &quot;Square = &quot; &lt;&lt; n * n &lt;&lt; &quot;\n&quot;;
+}
+</code></pre>
+<p><code>cin &gt;&gt; n</code> skips spaces/newlines, then parses characters into the type of <code>n</code>. For a full line with spaces use <code>getline(cin, s);</code> (note: after <code>cin &gt;&gt; n</code> a newline remains in the buffer; call <code>cin.ignore()</code> first).</p>
+<h3 id="141-fast-io-contest-critical">1.4.1 Fast I/O (contest-critical)</h3>
+<p>By default <code>cin/cout</code> stay synchronised with C's <code>scanf/printf</code> (so mixing both works), which is slow. If you use only C++ streams, switch the sync off:</p>
+<pre><code class="language-cpp">ios::sync_with_stdio(false);  // don't sync with C streams
+cin.tie(nullptr);             // don't flush cout before every cin
+</code></pre>
+<p>and use <code>'\n'</code> rather than <code>endl</code> (<code>endl</code> forces a <em>flush</em> — a slow trip to the screen — every time). For 10⁶ numbers this is the difference between 0.1 s and 1+ s.</p>
+<h2 id="15-type-conversion-casting">1.5 Type conversion (casting)</h2>
+<pre><code class="language-cpp">int a = 5;
+double d = a;          // implicit, safe: 5.0
+int b = 3.9;           // implicit, loses data: b == 3 (truncates)
+int c = (int)3.9;      // C-style cast
+int e = static_cast&lt;int&gt;(3.9); // C++ style: searchable, explicit
+</code></pre>
+<p>When types mix in arithmetic, the smaller/"weaker" one is <strong>promoted</strong>: <code>int + double</code> → <code>double</code>; <code>int + long long</code> → <code>long long</code>; and a notorious trap: <code>int</code> vs <code>unsigned</code> compares as unsigned, so <code>-1 &lt; 1u</code> is <strong>false</strong> (−1 becomes 4 294 967 295).</p>
+<div class="callout rose">
+<div class="ct">The `size()` trap</div>
+<p><code>v.size()</code> is <em>unsigned</em>. <code>for (int i = 0; i &lt;= v.size() - 1; i++)</code> when <code>v</code> is empty: <code>size()-1</code> wraps to 18 446 744 073 709 551 615 → infinite loop/crash. Write <code>i &lt; (int)v.size()</code> or <code>i + 1 &lt; v.size()</code>.</p>
+</div>
+<div class="callout violet">
+<div class="ct">Try it — Predict</div>
+<p>What do these print? <code>cout &lt;&lt; 5/2 &lt;&lt; " " &lt;&lt; 5/2.0 &lt;&lt; " " &lt;&lt; 5%3 &lt;&lt; " " &lt;&lt; -5%3 &lt;&lt; " " &lt;&lt; (1&lt;&lt;4);</code></p>
+<details>
+<summary>Solution</summary>
+<p><code>2 2.5 2 -2 16</code>. Integer division truncates; <code>5/2.0</code> is double; <code>-5%3</code> is −2 (sign follows the left operand); <code>1&lt;&lt;4</code> = 16.</p>
+</details>
+</div>
+<hr />
+<h1 id="module-2-control-flow-making-decisions-and-repeating">Module 2 — Control flow: making decisions and repeating</h1>
+<div class="callout rose">
+<div class="ct">Kid version</div>
+<p>Up to now the clerk follows instructions top to bottom like a recipe. <strong>Control flow</strong> lets the recipe say "<em>if</em> the milk is sour, throw it away" (decision) and "<em>stir until</em> smooth" (repetition).</p>
+</div>
+<h2 id="21-if-else">2.1 <code>if / else</code></h2>
+<pre><code class="language-cpp">int marks = 72;
+if (marks &gt;= 90)      cout &lt;&lt; &quot;A\n&quot;;
+else if (marks &gt;= 75) cout &lt;&lt; &quot;B\n&quot;;
+else if (marks &gt;= 60) cout &lt;&lt; &quot;C\n&quot;;
+else                  cout &lt;&lt; &quot;F\n&quot;;
+</code></pre>
+<p>Conditions are checked <strong>top to bottom, first true wins</strong>. So <code>&gt;= 90</code> first, then <code>&gt;= 75</code> (which we reach only if it's <em>not</em> ≥ 90). <em>Order matters.</em></p>
+<blockquote>
+<p>In C++, <em>any</em> number works as a condition: 0 is false, everything else is true. That's why <code>if (x)</code> means <code>if (x != 0)</code>.</p>
+</blockquote>
+<p>Always use <code>{ }</code> braces even for one line — a famous bug (Apple's "goto fail" security flaw) came from a missing brace.</p>
+<p><strong>Ternary:</strong> <code>int m = (a &gt; b) ? a : b;</code> — a compact if-else that produces a value.</p>
+<h2 id="22-switch">2.2 <code>switch</code></h2>
+<pre><code class="language-cpp">switch (op) {
+    case '+': r = a + b; break;
+    case '-': r = a - b; break;
+    default : r = 0;
+}
+</code></pre>
+<div class="callout amber">
+<div class="ct">Why `break`?</div>
+<p>Without <code>break</code>, execution <strong>falls through</strong> into the next case. This is a deliberate historical design (sometimes handy for grouping cases) but a common bug. <code>switch</code> works on integers/chars, not strings.</p>
+</div>
+<h2 id="23-loops">2.3 Loops</h2>
+<h3 id="while-repeat-while-a-condition-holds"><code>while</code> — repeat while a condition holds</h3>
+<pre><code class="language-cpp">int n = 5, fact = 1;
+while (n &gt; 1) { fact *= n; n--; }
+cout &lt;&lt; fact;   // 120
+</code></pre>
+<h3 id="for-when-you-know-the-counting"><code>for</code> — when you know the counting</h3>
+<pre><code class="language-cpp">for (int i = 0; i &lt; 5; ++i) cout &lt;&lt; i &lt;&lt; &quot; &quot;;   // 0 1 2 3 4
+</code></pre>
+<p><code>for (init; condition; update)</code> expands to: do <code>init</code> once; <em>while</em> <code>condition</code> { body; <code>update</code> }. Programmers count from <strong>0</strong> and use <code>&lt;</code> because a length-5 array has indices 0..4 — "start at 0, stop before n" gives exactly <code>n</code> iterations with no off-by-one math.</p>
+<h3 id="do-while-runs-at-least-once-range-for-over-containers"><code>do-while</code> — runs at least once; <code>range-for</code> — over containers</h3>
+<pre><code class="language-cpp">vector&lt;int&gt; v = {3, 1, 4};
+for (int x : v) cout &lt;&lt; x &lt;&lt; &quot; &quot;;        // copies each
+for (int &amp;x : v) x *= 2;                  // reference: modifies original
+for (const auto &amp;x : v) cout &lt;&lt; x;        // read-only, no copy
+</code></pre>
+<h3 id="break-and-continue"><code>break</code> and <code>continue</code></h3>
+<p><code>break</code> leaves the loop entirely; <code>continue</code> skips to the next iteration.</p>
+<h2 id="24-thinking-about-loops-invariants">2.4 Thinking about loops: invariants</h2>
+<div class="callout amber">
+<div class="ct">How to write loops that are *correct*</div>
+<p>Don't code by trial and error. Ask: <strong>"What is true at the start of every iteration?"</strong> — the <strong>loop invariant</strong>.
+Example, summing 1..n:</p>
+<pre><code class="language-cpp">int sum = 0;
+for (int i = 1; i &lt;= n; ++i) sum += i;
+</code></pre>
+<p>Invariant: <em>before iteration <code>i</code>, <code>sum</code> = 1 + 2 + … + (i−1)</em>. True initially (<code>i=1</code>, sum=0, empty sum). Each iteration preserves it. When the loop ends (<code>i = n+1</code>), <code>sum</code> = 1+…+n. ∎ This is exactly <em>mathematical induction</em>, and it's how you debug and prove algorithms.</p>
+</div>
+<p><strong>Nested loops</strong> multiply: outer 3 × inner 4 = 12 executions of the inner body. Patterns:</p>
+<pre><code class="language-cpp">for (int i = 1; i &lt;= 4; ++i) {          // rows
+    for (int j = 1; j &lt;= i; ++j) cout &lt;&lt; &quot;* &quot;;
+    cout &lt;&lt; &quot;\n&quot;;
+}
+</code></pre>
+<pre><code>*
+* *
+* * *
+* * * *
+</code></pre>
+<h2 id="25-worked-examples">2.5 Worked examples</h2>
+<p><strong>Is <code>n</code> prime?</strong> A number &gt; 1 with no divisors except 1 and itself. <em>Why only check up to √n?</em> If $n = a \cdot b$ with $a \le b$, then $a \le \sqrt n$. So any composite has a divisor ≤ √n; if none found there, it's prime.</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+bool isPrime(int n) {
+    if (n &lt; 2) return false;
+    for (long long d = 2; d * d &lt;= n; ++d)    // d*d&lt;=n avoids sqrt rounding
+        if (n % d == 0) return false;
+    return true;
+}
+int main() {
+    for (int i = 1; i &lt;= 20; ++i) if (isPrime(i)) cout &lt;&lt; i &lt;&lt; &quot; &quot;;
+    cout &lt;&lt; &quot;\n&quot;;   // 2 3 5 7 11 13 17 19
+}
+</code></pre>
+<p><strong>GCD (Euclid, ~300 BC):</strong> $\gcd(a,b)=\gcd(b,\ a \bmod b)$. <em>Why?</em> Any number dividing both <code>a</code> and <code>b</code> also divides <code>a − qb = a mod b</code>, and vice versa — so the <em>set of common divisors</em> is unchanged, and the numbers shrink fast.</p>
+<pre><code class="language-cpp">int gcd(int a, int b) { while (b) { int t = a % b; a = b; b = t; } return a; }
+</code></pre>
+<div class="callout violet">
+<div class="ct">Try it</div>
+<ol>
+<li>Print the digits of a number in reverse (use <code>% 10</code> and <code>/ 10</code>). 2. Sum of digits. 3. Print an inverted triangle and a number pyramid. 4. FizzBuzz 1..100.</li>
+</ol>
+<details>
+<summary>Hint for 1 &amp; 2</summary>
+<p><code>n % 10</code> is the last digit; <code>n / 10</code> removes it. Loop while <code>n &gt; 0</code>.</p>
+</details>
+</div>
+<hr />
+<h1 id="module-3-functions-giving-a-recipe-a-name">Module 3 — Functions: giving a recipe a name</h1>
+<div class="callout rose">
+<div class="ct">Kid version</div>
+<p>If you keep writing "crack egg, whisk, pour in pan" you'd go mad. Give the routine a name — <code>makeOmelette</code> — and just say the name. A <strong>function</strong> is a named recipe that takes ingredients (<strong>parameters</strong>) and may hand you back a dish (<strong>return value</strong>).</p>
+</div>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+int square(int x) {     // return type, name, (parameter list)
+    return x * x;
+}
+int main() { cout &lt;&lt; square(5); }   // 25
+</code></pre>
+<ul>
+<li><code>void</code> return type = "returns nothing".</li>
+<li>Arguments are the real values you pass; parameters are the names inside.</li>
+</ul>
+<h2 id="31-the-call-stack-what-really-happens">3.1 The call stack: what really happens</h2>
+<p>When <code>main</code> calls <code>square(5)</code>, the machine:
+1. sets aside a block of memory called a <strong>stack frame</strong> for <code>square</code> (holding its parameters and local variables and where to return to),
+2. runs it,
+3. discards the frame on return.</p>
+<p>Frames pile up like a stack of plates: last in, first out.</p>
+<pre><code> main()            ← bottom
+   └ f()
+       └ g()       ← top: currently running
+</code></pre>
+<div class="callout amber">
+<div class="ct">Why a stack?</div>
+<p>Function calls are naturally nested: you finish the <em>most recent</em> call before returning to its caller. A stack gives exactly that order, and allocating/freeing is nearly free (just move a marker). This also explains: <strong>local variables vanish when the function returns</strong>, and <strong>infinite recursion → stack overflow</strong> (plates pile past the ceiling; the stack is only ~1–8 MB).</p>
+</div>
+<h2 id="32-pass-by-value-vs-by-reference">3.2 Pass by value vs by reference</h2>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+void bad(int x)  { x = 99; }       // x is a COPY
+void good(int &amp;x){ x = 99; }       // x is another NAME for the caller's variable
+int main() {
+    int a = 1;
+    bad(a);  cout &lt;&lt; a;   // 1
+    good(a); cout &lt;&lt; a;   // 99
+}
+</code></pre>
+<div class="callout amber">
+<div class="ct">Why copies by default?</div>
+<p>Safety: a function can't accidentally wreck your variables. Cost: copying. Copying an <code>int</code> is nothing; copying a <code>vector</code> of a million elements is <strong>expensive</strong>. So for big objects pass <code>const T&amp;</code> — "give me a read-only view, don't copy":</p>
+<pre><code class="language-cpp">long long sum(const vector&lt;int&gt;&amp; v) { long long s=0; for(int x:v) s+=x; return s; }
+</code></pre>
+<p><strong>Rule:</strong> small built-in types by value; big objects by <code>const &amp;</code> (read) or <code>&amp;</code> (modify).</p>
+</div>
+<p><strong>Swap</strong> needs references:</p>
+<pre><code class="language-cpp">void mySwap(int &amp;a, int &amp;b) { int t = a; a = b; b = t; }   // or std::swap
+</code></pre>
+<h2 id="33-declaration-vs-definition-overloading-defaults">3.3 Declaration vs definition, overloading, defaults</h2>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+int add(int a, int b);            // declaration (prototype): &quot;this exists&quot;
+int main() { cout &lt;&lt; add(2,3); }
+int add(int a, int b) { return a + b; }   // definition: the actual body
+</code></pre>
+<p>C++ reads top to bottom; you must <em>announce</em> a function before using it. Big programs put declarations in headers (<code>.h</code>) and definitions in <code>.cpp</code> files — the linker joins them.</p>
+<p><strong>Overloading</strong> — same name, different parameter types (the compiler picks by the arguments):</p>
+<pre><code class="language-cpp">int    mx(int a, int b)       { return a &gt; b ? a : b; }
+double mx(double a, double b) { return a &gt; b ? a : b; }
+</code></pre>
+<p><strong>Default arguments:</strong> <code>void greet(string name, string msg = "Hello");</code></p>
+<h2 id="34-scope-and-lifetime">3.4 Scope and lifetime</h2>
+<ul>
+<li><strong>Scope</strong> = where a <em>name</em> is visible: from its declaration to the closing <code>}</code> of its block.</li>
+<li><strong>Lifetime</strong> = how long the <em>box</em> exists. Locals: until the block ends. <code>static</code> locals: whole program (initialised once). Globals: whole program.</li>
+</ul>
+<pre><code class="language-cpp">int counter() { static int c = 0; return ++c; }  // remembers between calls
+</code></pre>
+<p>A variable in an inner block <em>shadows</em> an outer one of the same name — legal but confusing; avoid.</p>
+<h2 id="35-inline-constexpr-lambdas-preview">3.5 <code>inline</code>, <code>constexpr</code>, lambdas (preview)</h2>
+<ul>
+<li><code>inline</code>: a hint/permission to paste the body at the call site (avoids call overhead). Modern compilers decide this themselves with <code>-O2</code>.</li>
+<li><code>constexpr int sq(int x){return x*x;}</code> — can be computed <strong>at compile time</strong>.</li>
+<li><strong>Lambda</strong> — an unnamed function you write on the spot:</li>
+</ul>
+<pre><code class="language-cpp">auto add = [](int a, int b) { return a + b; };
+cout &lt;&lt; add(2, 3);
+</code></pre>
+<p>The <code>[ ]</code> is the <em>capture list</em>: which outside variables the lambda may use (<code>[=]</code> copy all, <code>[&amp;]</code> reference all, <code>[&amp;x]</code> just x by reference).</p>
+<div class="callout violet">
+<div class="ct">Try it</div>
+<p>Write <code>power(base, exp)</code> with a loop. Then make it fast using the idea $x^{n} = (x^{n/2})^2$. We do that properly in Module 10.</p>
+</div>
+<hr />
+<h1 id="module-4-arrays-strings-and-vectors-many-boxes-in-a-row">Module 4 — Arrays, strings, and vectors: many boxes in a row</h1>
+<h2 id="41-arrays">4.1 Arrays</h2>
+<div class="callout rose">
+<div class="ct">Kid version</div>
+<p>One mailbox holds one number. What if you need 100 test scores? An <strong>array</strong> is 100 mailboxes <strong>side by side</strong>, glued together, sharing one name, and numbered 0, 1, 2, …</p>
+</div>
+<pre><code class="language-cpp">int a[5] = {10, 20, 30, 40, 50};
+cout &lt;&lt; a[0] &lt;&lt; &quot; &quot; &lt;&lt; a[4];     // 10 50
+a[2] = 99;
+</code></pre>
+<p><strong>Why indices start at 0.</strong> The array's name stands for the address of its <em>first</em> box. Element <code>i</code> lives at <code>address + i × (size of one element)</code>. The first element is <strong>zero</strong> steps from the start. So <code>a[i]</code> really means "start + i steps". That's the entire reason.</p>
+<pre><code>address:  1000  1004  1008  1012  1016        (int = 4 bytes)
+value:    [10] [20] [30] [40] [50]
+index:      0     1     2     3     4
+</code></pre>
+<p><strong>Why arrays are fast:</strong> to reach <code>a[i]</code>, the CPU does <em>one</em> multiplication and addition — the same time for <code>a[0]</code> or <code>a[999999]</code>. This is <strong>random access, O(1)</strong>. Hold on to this; it's the superpower of arrays.</p>
+<div class="callout rose">
+<div class="ct">C++ does NOT check bounds</div>
+<p><code>a[5]</code> for a 5-element array reads whatever lies after the array — <strong>undefined behaviour</strong>: maybe garbage, maybe a crash, maybe it silently corrupts another variable. Why no check? Checking costs time on every access; C++ trusts you. Debug with <code>-fsanitize=address</code> or use <code>v.at(i)</code>, which throws an exception.</p>
+</div>
+<p><strong>2D arrays</strong> are "an array of arrays", stored <em>row after row</em> (row-major):</p>
+<pre><code class="language-cpp">int g[3][4] = {};        // 3 rows × 4 columns, all zero
+g[1][2] = 7;
+</code></pre>
+<div class="callout amber">
+<div class="ct">Why traverse rows in the outer loop?</div>
+<p>Memory is read in chunks (<strong>cache lines</strong>, ~64 bytes). Walking along a row touches neighbouring bytes — one chunk serves many reads. Walking down a column jumps far apart each time — a new chunk every read. Same answer, but row-wise can be several times <strong>faster</strong>. (Real-world speed isn't only about Big-O!)</p>
+</div>
+<p><strong>Global big arrays:</strong> <code>int dp[1000005];</code> as a <em>global</em> is fine (lives in static memory, zeroed). The same declared <em>inside</em> <code>main</code> lives on the ~8 MB stack and can overflow it — a classic crash for arrays beyond ~10⁶ ints.</p>
+<p><strong>Weakness of arrays:</strong> the size is fixed at compile time, and you can't grow them. Enter…</p>
+<h2 id="42-stdvector-the-array-that-can-grow">4.2 <code>std::vector</code> — the array that can grow</h2>
+<pre><code class="language-cpp">#include &lt;vector&gt;
+vector&lt;int&gt; v;               // empty
+v.push_back(5);              // append
+v.push_back(7);
+cout &lt;&lt; v[0] &lt;&lt; v.size();    // 5 2
+vector&lt;int&gt; w(10, 0);        // 10 zeros
+vector&lt;vector&lt;int&gt;&gt; grid(3, vector&lt;int&gt;(4, 0));   // 3×4 matrix of 0
+v.pop_back();                // remove last
+v.clear();
+</code></pre>
+<h3 id="how-can-it-grow-the-doubling-trick">How can it grow? (The "doubling" trick)</h3>
+<p>A vector owns a block of memory with <strong>capacity</strong> C and uses <strong>size</strong> n ≤ C of it. On <code>push_back</code>:
+- if n &lt; C: place at the end. O(1).
+- if n == C: <strong>allocate a new block of 2C</strong>, copy everything over, free the old. O(n) — expensive, but rare.</p>
+<pre class="mermaid">flowchart LR
+  A[&quot;cap 1: [a]&quot;] --&gt;|push| B[&quot;cap 2: [a b]&quot;] --&gt;|push| C[&quot;cap 4: [a b c _]&quot;] --&gt;|push, push| D[&quot;cap 8...&quot;]
+</pre>
+<div class="callout amber">
+<div class="ct">Why doubling, not "add one slot"?</div>
+<p>Adding one slot each time → copying 1+2+3+…+n ≈ n²/2 elements total. Doubling → copies 1+2+4+…+n/2 ≈ n total. So <code>n</code> pushes cost O(n) overall: <strong>amortised O(1)</strong> per push. (Amortised = averaged over many operations; one costly operation pays for lots of cheap ones, like paying rent monthly to avoid daily haggling.)</p>
+<p><strong>Consequence:</strong> after a push that reallocates, earlier pointers/iterators/references into the vector become <strong>invalid</strong> (the old block was freed). Don't hold them across <code>push_back</code>. If you know the final size, call <code>v.reserve(n)</code> first.</p>
+</div>
+<p>Handy: <code>v.front()</code>, <code>v.back()</code>, <code>v.empty()</code>, <code>v.insert(v.begin()+i, x)</code> (O(n): shifts everything), <code>v.erase(v.begin()+i)</code> (O(n)).</p>
+<h2 id="43-strings">4.3 Strings</h2>
+<p><code>std::string</code> is basically a <code>vector&lt;char&gt;</code> with text conveniences:</p>
+<pre><code class="language-cpp">#include &lt;string&gt;
+string s = &quot;hello&quot;;
+s += &quot; world&quot;;                    // concatenate
+cout &lt;&lt; s.size() &lt;&lt; s[0];         // 11 h
+cout &lt;&lt; s.substr(0, 5);           // hello  (start, length)
+cout &lt;&lt; s.find(&quot;wor&quot;);            // 6   (string::npos if absent)
+reverse(s.begin(), s.end());
+if (s1 &lt; s2) { }                  // lexicographic (dictionary) comparison
+string t = to_string(42);  int n = stoi(&quot;123&quot;);
+</code></pre>
+<p>Palindrome check (two pointers: compare the outside inward):</p>
+<pre><code class="language-cpp">bool isPal(const string&amp; s){
+    int i = 0, j = (int)s.size() - 1;
+    while (i &lt; j) if (s[i++] != s[j--]) return false;
+    return true;
+}
+</code></pre>
+<div class="callout rose">
+<div class="ct">`s = s + c` inside a loop is O(n) per step if written as `s = s + c` (builds a temporary). `s += c` / `push_back(c)` is amortised O(1).</div>
+</div>
+<h2 id="44-putting-it-together-prefix-sums-first-real-dsa-idea">4.4 Putting it together: prefix sums (first real DSA idea)</h2>
+<p><strong>Problem:</strong> many queries "what's the sum of <code>a[l..r]</code>?" Doing a loop each time costs O(n) per query.</p>
+<p><strong>Idea:</strong> precompute <code>pre[i] = a[0] + … + a[i-1]</code>. Then sum(l..r) = <code>pre[r+1] − pre[l]</code>. <em>Why:</em> the prefix up to r+1 contains everything up to r; subtracting the prefix before l removes the unwanted left part.</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+int main() {
+    vector&lt;int&gt; a = {3, 1, 4, 1, 5, 9, 2, 6};
+    int n = a.size();
+    vector&lt;long long&gt; pre(n + 1, 0);
+    for (int i = 0; i &lt; n; ++i) pre[i + 1] = pre[i] + a[i];
+    // sum of a[2..5] = 4+1+5+9 = 19
+    cout &lt;&lt; pre[6] - pre[2] &lt;&lt; &quot;\n&quot;;
+}
+</code></pre>
+<p>Cost: O(n) once, then <strong>O(1)</strong> per query. This "pay once, answer fast" pattern recurs everywhere in DSA.</p>
+<hr />
+<h1 id="module-5-pointers-references-and-memory">Module 5 — Pointers, references, and memory</h1>
+<div class="callout rose">
+<div class="ct">Kid version</div>
+<p>Every mailbox has a number (its address). A <strong>pointer</strong> is a variable whose <em>value is another box's address</em> — like a sticky note reading "the treasure is in box 1008". A pointer doesn't hold the treasure; it tells you where to look.</p>
+</div>
+<h2 id="51-pointers">5.1 Pointers</h2>
+<pre><code class="language-cpp">int x = 10;
+int *p = &amp;x;     // &amp; = &quot;address of x&quot;.  p now holds x's address.
+cout &lt;&lt; p;       // 0x7ffe...   (an address)
+cout &lt;&lt; *p;      // 10          (* = &quot;go to that address and look inside&quot;: dereference)
+*p = 20;         // writes through the pointer
+cout &lt;&lt; x;       // 20 — x changed!
+</code></pre>
+<p>Memorise the two meanings of the symbols:
+| Where | <code>&amp;</code> means | <code>*</code> means |
+|---|---|---|
+| in an expression | address-of | dereference (follow the arrow) |
+| in a declaration | "reference to" (<code>int &amp;r</code>) | "pointer to" (<code>int *p</code>) |</p>
+<p><strong>Why do pointers exist?</strong>
+1. <strong>Share</strong> data without copying (pass a huge object's address, not the object).
+2. <strong>Build structures</strong> whose pieces point to each other — linked lists, trees, graphs.
+3. <strong>Create memory at run time</strong> whose size you only know while running (§5.4).</p>
+<p><code>nullptr</code> = "points to nothing". Dereferencing it → crash (segmentation fault). Always check if it might be null.</p>
+<h2 id="52-pointers-and-arrays-are-cousins">5.2 Pointers and arrays are cousins</h2>
+<p>An array's name <em>decays</em> to a pointer to its first element: <code>int a[5]; int *p = a;</code> → <code>p == &amp;a[0]</code>.</p>
+<p><strong>Pointer arithmetic:</strong> <code>p + 1</code> moves by <strong>one element</strong> (not one byte): the compiler adds <code>sizeof(int)</code> = 4 bytes. That's why <code>a[i]</code> ≡ <code>*(a + i)</code> — exactly the "start + i steps" rule from §4.1. (It even means <code>i[a]</code> compiles. Don't.)</p>
+<pre><code class="language-cpp">int a[4] = {1,2,3,4};
+for (int *p = a; p != a + 4; ++p) cout &lt;&lt; *p &lt;&lt; &quot; &quot;;
+</code></pre>
+<div class="callout rose">
+<div class="ct">Arrays decay → `sizeof` lies in functions</div>
+<p><code>void f(int a[]) { sizeof(a) }</code> gives the size of a <strong>pointer</strong> (8), not the array. The function doesn't know the length — always pass the size too (or use <code>vector</code>).</p>
+</div>
+<h2 id="53-references-a-safer-cousin">5.3 References: a safer cousin</h2>
+<p><code>int &amp;r = x;</code> makes <code>r</code> a <strong>second name</strong> for <code>x</code> (no separate box; it <em>is</em> x). Must be initialised, can't be re-pointed, can't be null. Under the hood the compiler usually implements it as a pointer, but gives you nicer syntax and fewer ways to shoot yourself.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>pointer</th>
+<th>reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>can be null</td>
+<td>yes</td>
+<td>no</td>
+</tr>
+<tr>
+<td>can be re-pointed</td>
+<td>yes</td>
+<td>no</td>
+</tr>
+<tr>
+<td>syntax</td>
+<td><code>*p</code>, <code>p-&gt;m</code></td>
+<td>just <code>r</code>, <code>r.m</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="54-the-two-memory-regions-stack-vs-heap">5.4 The two memory regions: stack vs heap</h2>
+<pre><code> high address ┌───────────────┐
+              │     STACK     │  ← local variables, function frames. Auto-managed. Small (~8MB).
+              │       ↓       │
+              │               │
+              │       ↑       │
+              │     HEAP      │  ← memory YOU request with new. Big. YOU free it.
+              ├───────────────┤
+              │ globals/static│
+              ├───────────────┤
+              │  program code │
+ low address  └───────────────┘
+</code></pre>
+<p><strong>Stack:</strong> automatic. Allocation = move a marker. Fast. But everything dies when the function returns, and the size must be known at compile time.</p>
+<p><strong>Heap (free store):</strong> you ask the OS for memory with <code>new</code>, and it stays until <strong>you</strong> release it with <code>delete</code>. Slower (the allocator must find a free chunk), but flexible in size and lifetime.</p>
+<pre><code class="language-cpp">int *p = new int(42);         // box on the heap holding 42
+int *arr = new int[n];        // n ints (n decided at run time!)
+// ... use them ...
+delete p;                     // free ONE
+delete[] arr;                 // free an ARRAY (note the [])
+</code></pre>
+<h3 id="the-four-classic-memory-bugs-know-them-by-name">The four classic memory bugs (know them by name)</h3>
+<ol>
+<li><strong>Memory leak</strong> — you <code>new</code> but forget <code>delete</code>. The memory stays reserved until the program ends. A long-running server slowly eats all RAM and dies.</li>
+<li><strong>Dangling pointer</strong> — you <code>delete p</code> then use <code>*p</code>. The box is no longer yours; it may hold anything now. (Setting <code>p = nullptr</code> after delete helps catch it.)</li>
+<li><strong>Double free</strong> — <code>delete p; delete p;</code> corrupts the allocator's bookkeeping → crash.</li>
+<li><strong>Returning address of a local</strong> —</li>
+</ol>
+<pre><code class="language-cpp">int* bad() { int x = 5; return &amp;x; }   // x dies at '}', pointer now dangles!
+</code></pre>
+<p><em>Why:</em> <code>x</code> lived in <code>bad</code>'s stack frame, which was discarded. The address still exists but the box has been recycled.</p>
+<div class="callout amber">
+<div class="ct">Why does C++ make *you* manage this?</div>
+<p>A garbage collector (Java/Python) must pause to hunt for unused memory, and costs extra memory and unpredictability. C++ gives you control and predictable speed. Modern C++ fixes the <em>danger</em> without the cost by tying memory release to variable lifetime — <strong>RAII</strong>, covered in Module 6/8. In modern code you will rarely write raw <code>new</code>/<code>delete</code>; you'll use <code>vector</code> and smart pointers. But you must understand what they do for you.</p>
+</div>
+<h2 id="55-pointers-to-structs-and-the-arrow">5.5 Pointers to structs and the arrow</h2>
+<pre><code class="language-cpp">struct Node { int val; Node *next; };
+Node *n = new Node{5, nullptr};
+cout &lt;&lt; (*n).val;   // clumsy
+cout &lt;&lt; n-&gt;val;     // `-&gt;` = &quot;follow pointer, then take member&quot;
+</code></pre>
+<p>This tiny <code>Node</code> is the seed of linked lists, trees and graphs (Parts II–IV).</p>
+<hr />
+<h1 id="module-6-classes-and-object-oriented-programming">Module 6 — Classes and Object-Oriented Programming</h1>
+<div class="callout rose">
+<div class="ct">Kid version</div>
+<p>A <strong>struct</strong> is a lunchbox that bundles different things (name, age, marks) into one object. A <strong>class</strong> is the same, plus <strong>rules</strong>: the box has built-in buttons (functions) and some compartments are locked from outsiders — so nobody can set your age to −5.</p>
+</div>
+<h2 id="61-structs-and-classes">6.1 Structs and classes</h2>
+<pre><code class="language-cpp">struct Student { string name; int marks; };
+Student s{&quot;Asha&quot;, 91};
+cout &lt;&lt; s.name &lt;&lt; s.marks;
+</code></pre>
+<pre><code class="language-cpp">class BankAccount {
+private:                       // only the class's own functions can touch these
+    long long balance = 0;
+public:                        // anyone can use these
+    void deposit(long long x) { if (x &gt; 0) balance += x; }
+    bool withdraw(long long x) {
+        if (x &lt;= 0 || x &gt; balance) return false;
+        balance -= x; return true;
+    }
+    long long get() const { return balance; }   // const: promises not to modify the object
+};
+</code></pre>
+<div class="callout amber">
+<div class="ct">Why hide data? (**Encapsulation**)</div>
+<p>The class guarantees its own rules (<em>invariants</em>): "balance never goes negative." If <code>balance</code> were public, any code anywhere could break that, and finding the culprit means searching the whole program. With <code>private</code> data, only a handful of member functions can possibly be guilty. (<code>struct</code> and <code>class</code> are identical except <code>struct</code> defaults to public, <code>class</code> to private.)</p>
+</div>
+<h2 id="62-constructors-and-destructors-birth-and-death">6.2 Constructors and destructors — birth and death</h2>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+class Array {
+    int n; int *data;
+public:
+    Array(int n_) : n(n_), data(new int[n_]()) {          // constructor: runs at birth
+        cout &lt;&lt; &quot;born\n&quot;;
+    }
+    ~Array() { delete[] data; cout &lt;&lt; &quot;died\n&quot;; }         // destructor: runs at death
+};
+int main() {
+    Array a(5);        // &quot;born&quot;
+}                      // &quot;died&quot;  ← automatically, when a goes out of scope
+</code></pre>
+<div class="callout amber">
+<div class="ct">RAII — the most important C++ idea</div>
+<p><strong>R</strong>esource <strong>A</strong>cquisition <strong>I</strong>s <strong>I</strong>nitialisation: acquire the resource (memory, file, lock) in the <em>constructor</em>; release it in the <em>destructor</em>. Since C++ guarantees destructors run when an object goes out of scope — even on early <code>return</code> or an exception — resources can <strong>never leak</strong>, without any garbage collector. <code>vector</code>, <code>string</code>, <code>unique_ptr</code>, <code>ifstream</code>, <code>lock_guard</code> all work this way.</p>
+</div>
+<p>The part after <code>:</code> in the constructor is the <strong>member initialiser list</strong> — it initialises members <em>directly</em> (rather than default-then-assign). Members are initialised in the order they're <strong>declared</strong> in the class, not the order in the list (a source of subtle bugs: if <code>data</code>'s initialiser used <code>n</code>, but <code>data</code> were declared <em>before</em> <code>n</code>, it would read an uninitialised <code>n</code>. Keep the list in declaration order — <code>-Wall</code> warns you).</p>
+<h2 id="63-the-copy-problem-and-the-rule-of-threefive">6.3 The copy problem, and the Rule of Three/Five</h2>
+<pre><code class="language-cpp">Array a(5);
+Array b = a;     // default copy: copies the POINTER, not the data
+</code></pre>
+<p>Now <code>a.data</code> and <code>b.data</code> point to the <strong>same</strong> heap block. When both die, each calls <code>delete[]</code> on the same block → <strong>double free</strong>. The compiler's automatic copy is a <em>shallow</em> copy (copies members bit by bit). If you own a resource you need a <strong>deep copy</strong>:</p>
+<pre><code class="language-cpp">Array(const Array&amp; o) : n(o.n), data(new int[o.n]) {          // copy constructor
+    for (int i = 0; i &lt; n; ++i) data[i] = o.data[i];
+}
+Array&amp; operator=(const Array&amp; o) {                            // copy assignment
+    if (this == &amp;o) return *this;       // self-assignment guard
+    int *nd = new int[o.n];
+    for (int i = 0; i &lt; o.n; ++i) nd[i] = o.data[i];
+    delete[] data; data = nd; n = o.n;
+    return *this;
+}
+</code></pre>
+<p><strong>Rule of Three:</strong> if you write a destructor, copy-constructor or copy-assignment, you almost certainly need all three. <strong>Rule of Five</strong> adds the <em>move</em> constructor/assignment (Module 8). <strong>Rule of Zero</strong> (best): own nothing raw — use <code>vector</code>/smart pointers and write none of them.</p>
+<h2 id="64-inheritance-and-polymorphism">6.4 Inheritance and polymorphism</h2>
+<pre><code class="language-cpp">class Shape {
+public:
+    virtual double area() const = 0;     // pure virtual: no body → Shape is abstract
+    virtual ~Shape() = default;          // virtual destructor (see below)
+};
+class Circle : public Shape {
+    double r;
+public:
+    Circle(double r) : r(r) {}
+    double area() const override { return 3.14159265 * r * r; }
+};
+class Rect : public Shape {
+    double w, h;
+public:
+    Rect(double w, double h) : w(w), h(h) {}
+    double area() const override { return w * h; }
+};
+</code></pre>
+<pre><code class="language-cpp">Shape *s1 = new Circle(1), *s2 = new Rect(2, 3);
+cout &lt;&lt; s1-&gt;area() &lt;&lt; &quot; &quot; &lt;&lt; s2-&gt;area();   // each calls ITS OWN area()
+</code></pre>
+<div class="callout amber">
+<div class="ct">How does `s1-&gt;area()` know to call Circle's version?</div>
+<p>The compiler can't know at compile time what <code>s1</code> really points to. Any class with a <code>virtual</code> function gets a hidden table, the <strong>vtable</strong> — an array of function pointers, one slot per virtual function — and every object carries a hidden pointer (<strong>vptr</strong>) to its class's vtable. A virtual call = <em>follow the vptr, look up the slot, jump.</em> Cost: one extra memory read. That is <strong>runtime polymorphism</strong>: one interface, many behaviours.</p>
+<p><strong>Why a virtual destructor?</strong> <code>delete s1;</code> through a <code>Shape*</code> must destroy a full <code>Circle</code>. Without <code>virtual</code>, only <code>~Shape</code> runs — the Circle's part leaks (undefined behaviour). Rule: <em>any base class meant for polymorphism gets a virtual destructor.</em></p>
+</div>
+<p><code>override</code> makes the compiler verify you really override something (catches typos in the signature). Prefer <strong>composition</strong> ("has-a") over inheritance ("is-a") unless the "is-a" is truly natural.</p>
+<h2 id="65-operator-overloading-and-this">6.5 Operator overloading and <code>this</code></h2>
+<p>Inside a member function, <code>this</code> is a pointer to the object being operated on.</p>
+<pre><code class="language-cpp">struct Vec2 {
+    double x, y;
+    Vec2 operator+(const Vec2&amp; o) const { return {x + o.x, y + o.y}; }
+    bool operator&lt;(const Vec2&amp; o) const { return tie(x, y) &lt; tie(o.x, o.y); }
+};
+// Now Vec2 a, b; a + b works, and Vec2 can be a key in set/map or be sorted.
+</code></pre>
+<p>Why it matters in DSA: to put your own type in a <code>set</code>, <code>map</code>, <code>priority_queue</code> or <code>sort</code>, you must define how two values compare (<code>operator&lt;</code> or a custom comparator).</p>
+<hr />
+<h1 id="module-7-templates-and-the-stl">Module 7 — Templates and the STL</h1>
+<h2 id="71-templates-write-once-for-every-type">7.1 Templates: write once for every type</h2>
+<p><code>mx(int,int)</code> and <code>mx(double,double)</code> are the same logic. A <strong>template</strong> is a <em>stencil</em>; the compiler stamps out a real function for every type you use.</p>
+<pre><code class="language-cpp">template &lt;typename T&gt;
+T mx(T a, T b) { return a &gt; b ? a : b; }
+mx(3, 7); mx(2.5, 1.5); mx(string(&quot;a&quot;), string(&quot;b&quot;));
+</code></pre>
+<p>This happens at <strong>compile time</strong> — zero run-time cost. <code>vector&lt;int&gt;</code> and <code>vector&lt;string&gt;</code> are two different classes generated from one template. <em>That</em> is why the STL is both generic and fast.</p>
+<h2 id="72-the-stl-map">7.2 The STL map</h2>
+<p>The <strong>S</strong>tandard <strong>T</strong>emplate <strong>L</strong>ibrary has three parts: <strong>containers</strong> (store things), <strong>iterators</strong> (walk over things), <strong>algorithms</strong> (do things). Because algorithms work through iterators, <code>sort</code> doesn't care whether it's sorting a vector or an array.</p>
+<h3 id="iterators-generalised-pointers">Iterators = generalised pointers</h3>
+<pre><code class="language-cpp">vector&lt;int&gt; v = {5, 2, 9};
+for (auto it = v.begin(); it != v.end(); ++it) cout &lt;&lt; *it;
+</code></pre>
+<p><code>begin()</code> points to the first element; <code>end()</code> points <strong>one past the last</strong> (a "half-open" range <code>[begin, end)</code>). <em>Why one past?</em> An empty range is then <code>begin == end</code> (no special case), and the length is just <code>end − begin</code>.</p>
+<h2 id="73-containers-and-what-they-cost">7.3 Containers — and what they <em>cost</em></h2>
+<p>You must know, for each container, <strong>how it's built</strong> — because the build determines the speed.</p>
+<table>
+<thead>
+<tr>
+<th>Container</th>
+<th>Built as</th>
+<th>Access</th>
+<th>Insert/erase</th>
+<th>Ordered?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>vector</code></td>
+<td>contiguous array</td>
+<td>O(1) by index</td>
+<td>O(1) at end*, O(n) middle</td>
+<td>by position</td>
+</tr>
+<tr>
+<td><code>deque</code></td>
+<td>blocks of arrays</td>
+<td>O(1)</td>
+<td>O(1) both ends</td>
+<td>by position</td>
+</tr>
+<tr>
+<td><code>list</code></td>
+<td>doubly linked list</td>
+<td>O(n)</td>
+<td>O(1) given iterator</td>
+<td>by position</td>
+</tr>
+<tr>
+<td><code>set</code> / <code>map</code></td>
+<td>balanced BST (red-black tree)</td>
+<td>O(log n) find</td>
+<td>O(log n)</td>
+<td><strong>sorted by key</strong></td>
+</tr>
+<tr>
+<td><code>unordered_set</code> / <code>unordered_map</code></td>
+<td>hash table</td>
+<td>O(1) avg</td>
+<td>O(1) avg</td>
+<td>no order</td>
+</tr>
+<tr>
+<td><code>priority_queue</code></td>
+<td>binary heap in a vector</td>
+<td>top O(1)</td>
+<td>push/pop O(log n)</td>
+<td>max at top</td>
+</tr>
+<tr>
+<td><code>stack</code>, <code>queue</code></td>
+<td>adapters over deque</td>
+<td>—</td>
+<td>O(1)</td>
+<td>LIFO / FIFO</td>
+</tr>
+<tr>
+<td><em>(</em>amortised)*</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;     // GCC-only: includes everything (handy in contests)
+using namespace std;
+int main() {
+    map&lt;string,int&gt; freq;                 // word → count
+    for (string w : {&quot;to&quot;,&quot;be&quot;,&quot;or&quot;,&quot;not&quot;,&quot;to&quot;,&quot;be&quot;}) freq[w]++;
+    for (auto &amp;[word, cnt] : freq) cout &lt;&lt; word &lt;&lt; &quot;:&quot; &lt;&lt; cnt &lt;&lt; &quot; &quot;;
+    // be:2 not:1 or:1 to:2   ← sorted by key
+ 
+    set&lt;int&gt; s = {5, 1, 3};
+    s.insert(2);
+    cout &lt;&lt; *s.begin();                   // 1 (smallest)
+    cout &lt;&lt; *s.lower_bound(3);            // 3: first element &gt;= 3
+    cout &lt;&lt; s.count(4);                   // 0 or 1
+ 
+    unordered_map&lt;int,int&gt; h;  h[7] = 1;  // O(1) average
+    priority_queue&lt;int&gt; maxheap;          // biggest on top
+    priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; minheap;
+}
+</code></pre>
+<div class="callout amber">
+<div class="ct">`map[key]` creates the key!</div>
+<p><code>freq[w]</code> on a missing key <strong>inserts</strong> it with value 0 and returns a reference. Brilliant for counting (<code>freq[w]++</code>), but if you only want to <em>check</em>, use <code>freq.count(w)</code> or <code>freq.find(w)</code>, otherwise your map silently fills with junk.</p>
+</div>
+<div class="callout rose">
+<div class="ct">Why `unordered_map` can be slow</div>
+<p>A hash table's O(1) is an <em>average</em>. If many keys collide in the same bucket it degrades to O(n). On some judges adversaries craft inputs to break the default hash. We'll build a hash table ourselves in Module 13 so you see why.</p>
+</div>
+<h2 id="74-algorithms-and-lambdas">7.4 Algorithms and lambdas</h2>
+<pre><code class="language-cpp">vector&lt;int&gt; v = {5, 2, 9, 1};
+sort(v.begin(), v.end());                          // ascending, O(n log n)
+sort(v.begin(), v.end(), greater&lt;int&gt;());          // descending
+sort(v.begin(), v.end(), [](int a, int b){ return abs(a) &lt; abs(b); });  // custom order
+reverse(v.begin(), v.end());
+int mn = *min_element(v.begin(), v.end());
+long long total = accumulate(v.begin(), v.end(), 0LL);
+bool found = binary_search(v.begin(), v.end(), 5);                // needs SORTED input
+auto it = lower_bound(v.begin(), v.end(), 5);                     // first &gt;= 5
+auto jt = upper_bound(v.begin(), v.end(), 5);                     // first &gt; 5
+next_permutation(v.begin(), v.end());                             // next lexicographic order
+v.erase(unique(v.begin(), v.end()), v.end());                     // dedupe a sorted vector
+</code></pre>
+<p><strong>Custom comparator rule:</strong> the comparator <code>cmp(a,b)</code> must mean "a goes strictly <em>before</em> b" — a <strong>strict weak ordering</strong>. Using <code>&lt;=</code> breaks the sort's assumptions and can crash. Always <code>&lt;</code> or <code>&gt;</code>, never <code>&lt;=</code>/<code>&gt;=</code>.</p>
+<p>Sorting pairs sorts by <code>.first</code>, then <code>.second</code>: <code>vector&lt;pair&lt;int,int&gt;&gt; p; sort(p.begin(), p.end());</code></p>
+<hr />
+<h1 id="module-8-modern-c-smart-pointers-and-move-semantics">Module 8 — Modern C++: smart pointers and move semantics</h1>
+<h2 id="81-smart-pointers-raii-applied-to-new">8.1 Smart pointers (RAII applied to <code>new</code>)</h2>
+<pre><code class="language-cpp">#include &lt;memory&gt;
+auto p = make_unique&lt;int&gt;(42);        // sole owner. Freed automatically.
+auto q = make_shared&lt;int&gt;(7);         // shared ownership with a reference count
+auto r = q;                           // count = 2; freed when the LAST owner dies
+</code></pre>
+<ul>
+<li><code>unique_ptr</code>: exactly one owner; can't be copied (only <em>moved</em>). Zero overhead. <strong>Default choice.</strong></li>
+<li><code>shared_ptr</code>: reference-counted. Costs extra. Beware cycles (A owns B owns A → never freed; break with <code>weak_ptr</code>).</li>
+</ul>
+<p>You now essentially never type <code>delete</code>.</p>
+<h2 id="82-move-semantics-steal-dont-copy">8.2 Move semantics — "steal, don't copy"</h2>
+<div class="callout rose">
+<div class="ct">Kid version</div>
+<p>You're moving house. You could <strong>photocopy</strong> every book (copy) and shred the originals — absurd. Or you hand over the box of books (<strong>move</strong>). The old house is empty, the new house owns the books.</p>
+</div>
+<p>Returning or passing a big <code>vector</code> by value used to mean a deep copy. A <strong>move</strong> just steals the internal pointer and leaves the source empty:</p>
+<pre><code class="language-cpp">vector&lt;int&gt; a(1000000, 1);
+vector&lt;int&gt; b = move(a);   // b takes a's buffer: O(1). a is now empty (valid but unspecified)
+</code></pre>
+<p><code>move(x)</code> doesn't move anything itself — it <em>casts</em> <code>x</code> to "you may steal from me" (an rvalue reference <code>T&amp;&amp;</code>). Types with a move constructor then take the resources. In practice: <strong>returning a local by value is fine</strong> (the compiler elides/moves it); <code>push_back(move(obj))</code> avoids a copy; <code>swap</code> is cheap.</p>
+<h2 id="83-other-modern-conveniences-worth-knowing">8.3 Other modern conveniences worth knowing</h2>
+<pre><code class="language-cpp">auto [a, b] = make_pair(1, 2);                // structured bindings
+for (auto &amp;[k, v] : mp) { }                    // iterate map nicely
+if (auto it = mp.find(3); it != mp.end()) { }  // init-statement in if
+optional&lt;int&gt; o = nullopt;                     // &quot;maybe a value&quot;
+string_view sv = &quot;no copy&quot;;                    // non-owning view of text
+</code></pre>
+<hr />
+<h1 id="part-ii-data-structures-algorithms">PART II — DATA STRUCTURES &amp; ALGORITHMS</h1>
+<h1 id="module-9-complexity-measuring-an-algorithm-without-a-stopwatch">Module 9 — Complexity: measuring an algorithm without a stopwatch</h1>
+<div class="callout rose">
+<div class="ct">Kid version</div>
+<p>Two kids look for a name in a phone book. Kid A reads every page from the start. Kid B opens to the middle, decides "my name is in the first half", throws away the other half, and repeats. Who wins? And — the key question — what happens when the phone book becomes 1000× thicker? <strong>Complexity answers that second question.</strong> It measures how work <em>grows</em> with input size <code>n</code>, ignoring the speed of the computer.</p>
+</div>
+<h2 id="91-counting-steps">9.1 Counting steps</h2>
+<p>Count the basic operations as a function of <code>n</code>:</p>
+<pre><code class="language-cpp">for (int i = 0; i &lt; n; ++i)              // n times → O(n)
+    sum += a[i];
+ 
+for (int i = 0; i &lt; n; ++i)              // n × n = n² → O(n²)
+    for (int j = 0; j &lt; n; ++j) cnt++;
+ 
+for (int i = 1; i &lt; n; i *= 2) cnt++;     // doubles each time: runs log₂ n times → O(log n)
+</code></pre>
+<p><strong>Big-O</strong> keeps only the dominant term and drops constants: <code>3n² + 100n + 7</code> → $O(n^2)$. <em>Why drop constants?</em> Because for huge <code>n</code> the biggest term swamps the rest, and constants depend on the machine, not the algorithm. Formal: $f(n)=O(g(n))$ if ∃ $c, n_0$: $f(n) \le c\,g(n)$ for all $n \ge n_0$.</p>
+<table>
+<thead>
+<tr>
+<th>Complexity</th>
+<th>Name</th>
+<th>n = 10⁶ takes about</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>O(1)</td>
+<td>constant</td>
+<td>instant</td>
+<td>array index</td>
+</tr>
+<tr>
+<td>O(log n)</td>
+<td>logarithmic</td>
+<td>~20 steps</td>
+<td>binary search</td>
+</tr>
+<tr>
+<td>O(n)</td>
+<td>linear</td>
+<td>10⁶</td>
+<td>scan</td>
+</tr>
+<tr>
+<td>O(n log n)</td>
+<td>linearithmic</td>
+<td>2×10⁷</td>
+<td>good sorting</td>
+</tr>
+<tr>
+<td>O(n²)</td>
+<td>quadratic</td>
+<td>10¹² (too slow!)</td>
+<td>double loop</td>
+</tr>
+<tr>
+<td>O(2ⁿ)</td>
+<td>exponential</td>
+<td>impossible for n&gt;40</td>
+<td>subsets</td>
+</tr>
+<tr>
+<td>O(n!)</td>
+<td>factorial</td>
+<td>impossible for n&gt;11</td>
+<td>permutations</td>
+</tr>
+</tbody>
+</table>
+<div class="callout amber">
+<div class="ct">Contest cheat: a modern machine does about **10⁸ – 10⁹ simple operations/second**. Look at the limit on `n` and pick the complexity accordingly:</div>
+<p>n ≤ 10 → O(n!) · n ≤ 20 → O(2ⁿ) · n ≤ 500 → O(n³) · n ≤ 5000 → O(n²) · n ≤ 10⁶ → O(n log n) · n ≤ 10⁸ → O(n).</p>
+</div>
+<h2 id="92-other-notations-space-and-amortised">9.2 Other notations, space, and amortised</h2>
+<ul>
+<li>$\Omega(g)$: lower bound ("at least"). $\Theta(g)$: tight ("exactly this growth"). Big-O is "at most".</li>
+<li><strong>Best / average / worst case.</strong> Quick-sort is O(n log n) on average, O(n²) in the worst case. Usually we quote the worst case (a guarantee).</li>
+<li><strong>Space complexity:</strong> extra memory used. Recursion depth counts (each frame costs memory).</li>
+<li><strong>Amortised:</strong> averaged over a sequence (e.g. <code>push_back</code> — Module 4).</li>
+</ul>
+<p><strong>Why log n so often?</strong> $\log_2 n$ = "how many times can I halve n before reaching 1?" Anything that <em>halves the problem each step</em> is O(log n): binary search, balanced trees, binary exponentiation. $\log_2(10^9)\approx 30$ — a billion becomes thirty.</p>
+<p><strong>The Master Theorem intuition</strong> (for divide-and-conquer $T(n)=aT(n/b)+f(n)$): compare the work at the leaves with the work at the root. Merge sort: $T(n)=2T(n/2)+n$: each of the $\log n$ levels does $n$ total work → $n\log n$.</p>
+<hr />
+<h1 id="module-10-recursion-and-backtracking">Module 10 — Recursion and backtracking</h1>
+<div class="callout rose">
+<div class="ct">Kid version</div>
+<p>"How many people are in the line ahead of me?" — you can't see the front, so you ask the person ahead: "How many are ahead of <em>you</em>?" They ask the next… until the first person says "0". Then each person adds 1 as the answers come back down the line. <strong>Recursion = solve a problem by asking a smaller copy of the same problem, and a base case that stops it.</strong></p>
+</div>
+<p>Every recursive function has: (1) <strong>base case</strong> — answer known directly; (2) <strong>recursive case</strong> — reduce to a smaller problem and trust it works (the <em>leap of faith</em> — this is induction).</p>
+<pre><code class="language-cpp">long long fact(int n) {
+    if (n &lt;= 1) return 1;        // base case
+    return n * fact(n - 1);      // smaller problem
+}
+</code></pre>
+<p>Trace <code>fact(3)</code>: calls <code>fact(2)</code> → calls <code>fact(1)</code> returns 1 → <code>fact(2)</code> returns 2 → <code>fact(3)</code> returns 6. The <strong>call stack</strong> (Module 3) holds the waiting frames. Without a base case: stack overflow.</p>
+<h2 id="101-fibonacci-and-why-naive-recursion-is-a-disaster">10.1 Fibonacci — and why naive recursion is a disaster</h2>
+<pre><code class="language-cpp">int fib(int n) { return n &lt; 2 ? n : fib(n-1) + fib(n-2); }
+</code></pre>
+<p><code>fib(5)</code> recomputes <code>fib(3)</code> twice, <code>fib(2)</code> three times… The call tree doubles: <strong>O(2ⁿ)</strong> (≈1.6ⁿ). <code>fib(50)</code> would take hours. The cure — remembering answers — is <strong>dynamic programming</strong> (Module 16): memoisation turns it into O(n).</p>
+<h2 id="102-fast-exponentiation-binary-exponentiation">10.2 Fast exponentiation (binary exponentiation)</h2>
+<p>Compute $x^n$ with $O(\log n)$ multiplications: $x^n = (x^{n/2})^2$ if n even; $x \cdot x^{n-1}$ if odd. <em>Why it works:</em> squaring halves the exponent each time.</p>
+<pre><code class="language-cpp">long long power(long long x, long long n, long long mod) {
+    long long r = 1; x %= mod;
+    while (n &gt; 0) {
+        if (n &amp; 1) r = r * x % mod;   // this bit of n is set → include x^(2^k)
+        x = x * x % mod;              // x, x², x⁴, x⁸ …
+        n &gt;&gt;= 1;
+    }
+    return r;
+}
+</code></pre>
+<p>Binary view: $x^{13}=x^{8}\cdot x^{4}\cdot x^{1}$ because 13 = 1101₂. <code>1e9+7</code> as <code>mod</code> keeps numbers inside <code>long long</code> (since $(10^9)^2 = 10^{18} &lt; 9.2\times 10^{18}$).</p>
+<h2 id="103-backtracking-exploring-choices">10.3 Backtracking — exploring choices</h2>
+<p><strong>Idea:</strong> build an answer one choice at a time; if a choice leads to a dead end, <strong>undo</strong> it and try the next. It's a depth-first walk through a tree of decisions.</p>
+<p><strong>Generate all subsets</strong> (each element: take it or skip it → 2ⁿ):</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+vector&lt;int&gt; cur;
+void subsets(vector&lt;int&gt;&amp; a, int i) {
+    if (i == (int)a.size()) {                // decided about every element
+        for (int x : cur) cout &lt;&lt; x &lt;&lt; &quot; &quot;;
+        cout &lt;&lt; &quot;\n&quot;; return;
+    }
+    subsets(a, i + 1);                       // choice 1: skip a[i]
+    cur.push_back(a[i]);                     // choice 2: take a[i]
+    subsets(a, i + 1);
+    cur.pop_back();                          // UNDO — the heart of backtracking
+}
+int main() { vector&lt;int&gt; a = {1, 2, 3}; subsets(a, 0); }
+</code></pre>
+<p><strong>Permutations</strong>, <strong>N-Queens</strong> (place a queen per row; prune any column/diagonal conflict), <strong>Sudoku</strong> use the same shape: <em>choose → recurse → un-choose</em>. <strong>Pruning</strong> = abandoning a branch early when it can't succeed — it's what makes backtracking feasible.</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+// N-Queens: count solutions. cols / diagonals tracked in boolean arrays.
+int n, cnt;
+bool col[20], d1[40], d2[40];
+void place(int r) {
+    if (r == n) { ++cnt; return; }
+    for (int c = 0; c &lt; n; ++c) {
+        if (col[c] || d1[r + c] || d2[r - c + n]) continue;  // attacked → prune
+        col[c] = d1[r + c] = d2[r - c + n] = true;           // choose
+        place(r + 1);                                        // recurse
+        col[c] = d1[r + c] = d2[r - c + n] = false;          // un-choose
+    }
+}
+int main() { n = 8; place(0); cout &lt;&lt; cnt; }   // 92
+</code></pre>
+<p><em>Why d1 = r+c and d2 = r−c?</em> Every cell on the same "/" diagonal has equal r+c; on the same "\" diagonal, equal r−c.</p>
+<div class="callout violet">
+<div class="ct">Try it</div>
+<p>Print all permutations of {1,2,3} using a <code>used[]</code> array. Then count paths in a grid from top-left to bottom-right moving right/down — first by recursion, then think about why memoisation helps.</p>
+</div>
+<hr />
+<h1 id="module-11-searching-and-sorting">Module 11 — Searching and sorting</h1>
+<h2 id="111-binary-search-the-art-of-halving">11.1 Binary search — the art of halving</h2>
+<div class="callout rose">
+<div class="ct">Kid version</div>
+<p>"I'm thinking of a number from 1 to 1000." You guess 500: "higher." Now 501–1000. Guess 750: "lower." Every guess throws away <strong>half</strong> the possibilities. Ten guesses are enough ($2^{10}=1024$).</p>
+</div>
+<p><strong>Requirement:</strong> the data must be <strong>sorted</strong> (or, more generally, the question must be <em>monotonic</em>: false…false true…true). <em>Why:</em> the whole trick is "if the middle is too small, <strong>everything to its left is too small too</strong>" — that's what lets us discard half without looking.</p>
+<pre><code class="language-cpp">// index of x in sorted a, or -1.  Invariant: if x exists, it lies in [lo, hi]
+int bsearch(const vector&lt;int&gt;&amp; a, int x) {
+    int lo = 0, hi = (int)a.size() - 1;
+    while (lo &lt;= hi) {
+        int mid = lo + (hi - lo) / 2;      // NOT (lo+hi)/2 : that can overflow int!
+        if (a[mid] == x) return mid;
+        if (a[mid] &lt; x) lo = mid + 1;      // x is right of mid
+        else            hi = mid - 1;      // x is left of mid
+    }
+    return -1;
+}
+</code></pre>
+<p>Most bugs come from the boundaries (<code>&lt;</code> vs <code>&lt;=</code>, <code>mid+1</code> vs <code>mid</code>). <strong>Fix by choosing an invariant and sticking to it.</strong> The most reusable form finds the <strong>first index where a predicate is true</strong>:</p>
+<pre><code class="language-cpp">// first i in [0, n] with ok(i) true, assuming ok is false...false true...true
+int lo = 0, hi = n;                 // answer may be n (&quot;none true&quot;)
+while (lo &lt; hi) {
+    int mid = lo + (hi - lo) / 2;
+    if (ok(mid)) hi = mid;          // mid could be the answer → keep it
+    else         lo = mid + 1;      // mid is false → answer is further right
+}
+// lo == hi == the first true
+</code></pre>
+<p>This is exactly <code>lower_bound</code>.</p>
+<h3 id="binary-search-on-the-answer">Binary search on the answer</h3>
+<p>Powerful trick: when you can't search an array but can <strong>test</strong> a candidate answer, and "feasible" is monotonic, binary-search the answer itself.</p>
+<p><em>Problem:</em> split an array into at most k parts to <strong>minimise the largest part-sum</strong>. Guess a limit L; greedily check if k parts suffice (O(n)). Larger L is always at least as feasible → monotonic. Binary search L in [max element, total sum]: O(n log(sum)).</p>
+<pre><code class="language-cpp">bool feasible(const vector&lt;int&gt;&amp; a, int k, long long L) {
+    int parts = 1; long long cur = 0;
+    for (int x : a) {
+        if (cur + x &gt; L) { ++parts; cur = 0; }
+        cur += x;
+    }
+    return parts &lt;= k;
+}
+// lo = max(a), hi = sum(a); find smallest L with feasible(L)
+</code></pre>
+<h2 id="112-sorting-the-algorithms-and-why-they-cost-what-they-cost">11.2 Sorting — the algorithms and <em>why</em> they cost what they cost</h2>
+<p>Why study them when <code>std::sort</code> exists? Because each embodies a <strong>technique</strong> (incremental, divide-and-conquer, heaps, counting) you'll reuse everywhere, and interviewers love them.</p>
+<h3 id="bubble-selection-insertion-on2">Bubble / selection / insertion — O(n²)</h3>
+<ul>
+<li><strong>Selection:</strong> find the minimum, put it first; repeat on the rest. <em>Always</em> n²/2 comparisons.</li>
+<li><strong>Insertion:</strong> keep the left part sorted; take the next card and slide it into place (like sorting a hand of cards). <strong>O(n) if nearly sorted</strong> — that's why real libraries use it for small chunks.</li>
+<li><strong>Bubble:</strong> repeatedly swap adjacent out-of-order pairs; large values "bubble" to the end. Never use in practice.</li>
+</ul>
+<pre><code class="language-cpp">void insertionSort(vector&lt;int&gt;&amp; a) {
+    for (int i = 1; i &lt; (int)a.size(); ++i) {
+        int key = a[i], j = i - 1;
+        while (j &gt;= 0 &amp;&amp; a[j] &gt; key) { a[j + 1] = a[j]; --j; }   // shift bigger ones right
+        a[j + 1] = key;
+    }
+}
+</code></pre>
+<p><em>Why n²?</em> Each element may travel past up to n others; each swap removes exactly one <strong>inversion</strong> (out-of-order pair), and a reversed array has n(n−1)/2 inversions. Any sort that only swaps <em>adjacent</em> elements needs ≥ #inversions steps.</p>
+<h3 id="merge-sort-on-log-n-stable">Merge sort — O(n log n), stable</h3>
+<p><strong>Idea (divide &amp; conquer):</strong> split in half, sort each half <em>recursively</em>, <strong>merge</strong> the two sorted halves (walk both with two fingers, always taking the smaller front). Merging is O(n) since each element is taken once.</p>
+<pre><code class="language-cpp">void mergeSort(vector&lt;int&gt;&amp; a, int l, int r) {       // sorts a[l, r)
+    if (r - l &lt; 2) return;
+    int m = (l + r) / 2;
+    mergeSort(a, l, m); mergeSort(a, m, r);
+    vector&lt;int&gt; t; t.reserve(r - l);
+    int i = l, j = m;
+    while (i &lt; m &amp;&amp; j &lt; r) t.push_back(a[i] &lt;= a[j] ? a[i++] : a[j++]);  // &lt;= keeps it stable
+    while (i &lt; m) t.push_back(a[i++]);
+    while (j &lt; r) t.push_back(a[j++]);
+    copy(t.begin(), t.end(), a.begin() + l);
+}
+</code></pre>
+<p>Levels: log₂n (halving). Work per level: n (merging). Total <strong>n log n</strong> — <em>always</em>, no bad case. Cost: O(n) extra memory. <strong>Stable</strong> = equal elements keep their original relative order (matters when sorting records by one field after another).</p>
+<p><em>Why can't any comparison sort beat n log n?</em> A sort must distinguish among n! possible orderings; each comparison is a yes/no answer, so a decision tree with n! leaves has depth ≥ $\log_2(n!) \approx n\log_2 n$. This is a <strong>lower bound</strong> — it's a fact about the problem, not about our cleverness. (Counting sort escapes it by <em>not comparing</em>.)</p>
+<p>Bonus: merge sort counts <strong>inversions</strong> in O(n log n) — while merging, whenever you take from the right half, every remaining left element forms an inversion with it.</p>
+<h3 id="quick-sort-average-on-log-n-in-place-fastest-in-practice">Quick sort — average O(n log n), in-place, fastest in practice</h3>
+<p><strong>Idea:</strong> pick a <strong>pivot</strong>; <strong>partition</strong> so smaller elements go left, larger right; the pivot is now in its <em>final</em> place; recurse on both sides.</p>
+<pre><code class="language-cpp">int partition(vector&lt;int&gt;&amp; a, int lo, int hi) {         // Lomuto scheme
+    int pivot = a[hi], i = lo;
+    for (int j = lo; j &lt; hi; ++j) if (a[j] &lt; pivot) swap(a[i++], a[j]);
+    swap(a[i], a[hi]);
+    return i;
+}
+void quickSort(vector&lt;int&gt;&amp; a, int lo, int hi) {
+    if (lo &gt;= hi) return;
+    int p = partition(a, lo, hi);
+    quickSort(a, lo, p - 1); quickSort(a, p + 1, hi);
+}
+</code></pre>
+<p>Good pivots split evenly → depth log n → n log n. A bad pivot (always the smallest) → depth n → <strong>O(n²)</strong> (e.g. fixed last-element pivot on already-sorted data). Fix: <strong>random pivot</strong> (<code>swap(a[hi], a[lo + rand()%(hi-lo+1)])</code>), making the bad case astronomically unlikely. <code>std::sort</code> uses <em>introsort</em>: quicksort that switches to heapsort if recursion gets too deep, and insertion sort for tiny ranges.</p>
+<p><strong>Quickselect</strong> — find the k-th smallest in O(n) average: partition, then recurse into only the side containing k. (<code>nth_element</code> does it.)</p>
+<h3 id="heap-sort-on-log-n-in-place">Heap sort — O(n log n), in-place</h3>
+<p>Build a max-heap (Module 13), then repeatedly swap the max to the end. Guaranteed n log n, O(1) extra space, not stable, poor cache behaviour.</p>
+<h3 id="counting-sort-radix-sort-on-k-beating-the-bound">Counting sort &amp; radix sort — O(n + k): beating the bound</h3>
+<p>If keys are small integers 0..k, don't compare — <strong>count</strong> how many of each, then write them out:</p>
+<pre><code class="language-cpp">vector&lt;int&gt; cnt(k + 1, 0);
+for (int x : a) cnt[x]++;
+int idx = 0;
+for (int v = 0; v &lt;= k; ++v) while (cnt[v]--) a[idx++] = v;
+</code></pre>
+<p>Radix sort applies a stable counting sort digit by digit.</p>
+<table>
+<thead>
+<tr>
+<th>Sort</th>
+<th>Best</th>
+<th>Average</th>
+<th>Worst</th>
+<th>Extra space</th>
+<th>Stable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Insertion</td>
+<td>n</td>
+<td>n²</td>
+<td>n²</td>
+<td>1</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Merge</td>
+<td>n log n</td>
+<td>n log n</td>
+<td>n log n</td>
+<td>n</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Quick</td>
+<td>n log n</td>
+<td>n log n</td>
+<td>n²</td>
+<td>log n</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Heap</td>
+<td>n log n</td>
+<td>n log n</td>
+<td>n log n</td>
+<td>1</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Counting</td>
+<td>n+k</td>
+<td>n+k</td>
+<td>n+k</td>
+<td>k</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="module-12-linear-structures-lists-stacks-queues">Module 12 — Linear structures: lists, stacks, queues</h1>
+<h2 id="121-linked-list-a-chain-of-nodes">12.1 Linked list — a chain of nodes</h2>
+<div class="callout rose">
+<div class="ct">Kid version</div>
+<p>A scavenger hunt: each clue tells you where the <em>next</em> clue is hidden. To reach clue #50 you must follow 49 clues in order. But inserting a new clue between two is easy — just rewrite one note.</p>
+</div>
+<pre><code class="language-cpp">struct Node { int val; Node* next; Node(int v) : val(v), next(nullptr) {} };
+</code></pre>
+<p><strong>Array vs linked list</strong> — the trade-off flows from <em>how memory is laid out</em>:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>array / vector</th>
+<th>linked list</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>layout</td>
+<td>contiguous</td>
+<td>scattered nodes joined by pointers</td>
+</tr>
+<tr>
+<td>access i-th</td>
+<td><strong>O(1)</strong></td>
+<td>O(i) (must walk)</td>
+</tr>
+<tr>
+<td>insert/erase in the middle (given the spot)</td>
+<td>O(n) (shift)</td>
+<td><strong>O(1)</strong> (re-link)</td>
+</tr>
+<tr>
+<td>cache friendliness</td>
+<td>excellent</td>
+<td>poor</td>
+</tr>
+<tr>
+<td>extra memory</td>
+<td>none</td>
+<td>one pointer per node</td>
+</tr>
+</tbody>
+</table>
+<p>In practice vectors beat lists in speed almost always (cache!). But linked lists teach pointer manipulation, and the <em>idea</em> underlies trees, graphs, hash chains, LRU caches.</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+struct Node { int val; Node* next; Node(int v) : val(v), next(nullptr) {} };
+ 
+Node* pushFront(Node* head, int v) { Node* n = new Node(v); n-&gt;next = head; return n; }
+ 
+Node* reverseList(Node* head) {
+    Node *prev = nullptr, *cur = head;
+    while (cur) {
+        Node* nxt = cur-&gt;next;   // 1. remember the rest
+        cur-&gt;next = prev;        // 2. flip this arrow
+        prev = cur;              // 3. advance prev
+        cur = nxt;               // 4. advance cur
+    }
+    return prev;                 // new head
+}
+void print(Node* h) { for (; h; h = h-&gt;next) cout &lt;&lt; h-&gt;val &lt;&lt; &quot; &quot;; cout &lt;&lt; &quot;\n&quot;; }
+void freeList(Node* h) { while (h) { Node* t = h-&gt;next; delete h; h = t; } }
+ 
+int main() {
+    Node* h = nullptr;
+    for (int i = 5; i &gt;= 1; --i) h = pushFront(h, i);   // 1 2 3 4 5
+    print(h);
+    h = reverseList(h);                                  // 5 4 3 2 1
+    print(h);
+    freeList(h);
+}
+</code></pre>
+<p><strong>Why save <code>nxt</code> first?</strong> Flipping <code>cur-&gt;next</code> destroys the only link to the rest of the list — you'd lose it. Draw the arrows on paper; every pointer problem is solved by drawing and by <em>ordering the updates so nothing is lost</em>.</p>
+<p><strong>Fast &amp; slow pointers (Floyd's tortoise and hare)</strong>
+- <em>Middle:</em> slow moves 1, fast moves 2; when fast hits the end, slow is in the middle.
+- <em>Cycle detection:</em> if there's a loop, fast eventually <strong>laps</strong> slow and they meet (the gap shrinks by 1 each step, so it must hit 0). No loop → fast reaches null.</p>
+<pre><code class="language-cpp">bool hasCycle(Node* h) {
+    Node *s = h, *f = h;
+    while (f &amp;&amp; f-&gt;next) { s = s-&gt;next; f = f-&gt;next-&gt;next; if (s == f) return true; }
+    return false;
+}
+</code></pre>
+<p><strong>Doubly linked list</strong> adds <code>prev</code>; O(1) deletion given a node. <code>std::list</code> is one.</p>
+<h2 id="122-stack-last-in-first-out">12.2 Stack — Last In, First Out</h2>
+<div class="callout rose">
+<div class="ct">Kid version: a stack of plates. You add and remove only at the top.</div>
+</div>
+<p>Operations (all O(1)): <code>push</code>, <code>pop</code>, <code>top</code>, <code>empty</code>. It arises <em>whenever things nest</em>: function calls, undo, matching brackets, expression parsing, DFS.</p>
+<pre><code class="language-cpp">bool balanced(const string&amp; s) {
+    stack&lt;char&gt; st;
+    for (char c : s) {
+        if (c == '(' || c == '[' || c == '{') st.push(c);
+        else {
+            if (st.empty()) return false;
+            char o = st.top(); st.pop();
+            if ((c==')' &amp;&amp; o!='(') || (c==']' &amp;&amp; o!='[') || (c=='}' &amp;&amp; o!='{')) return false;
+        }
+    }
+    return st.empty();
+}
+</code></pre>
+<p><em>Why a stack?</em> The most recently opened bracket must be the first one closed — LIFO exactly.</p>
+<h3 id="monotonic-stack-next-greater-element-in-on">Monotonic stack — "next greater element" in O(n)</h3>
+<p>For each element find the next element to the right that is larger. Naive: O(n²). Keep a stack of indices whose answer is still <em>unknown</em>; their values are decreasing. When a bigger value arrives, it is the answer for every smaller element on top.</p>
+<pre><code class="language-cpp">vector&lt;int&gt; nextGreater(const vector&lt;int&gt;&amp; a) {
+    int n = a.size(); vector&lt;int&gt; res(n, -1); stack&lt;int&gt; st;
+    for (int i = 0; i &lt; n; ++i) {
+        while (!st.empty() &amp;&amp; a[st.top()] &lt; a[i]) { res[st.top()] = a[i]; st.pop(); }
+        st.push(i);
+    }
+    return res;
+}
+</code></pre>
+<p><em>Why O(n)?</em> Each index is pushed once and popped at most once → ≤ 2n operations total, even though there's a <code>while</code> inside a <code>for</code>. (Always count total work, not loop nesting.) This pattern solves "largest rectangle in histogram", "daily temperatures", "stock span".</p>
+<h2 id="123-queue-and-deque">12.3 Queue and deque</h2>
+<p><strong>Queue — First In, First Out</strong> (a line at a ticket counter): <code>push</code> at back, <code>pop</code> from front. Used in BFS, scheduling, buffering. <code>deque</code> supports O(1) at both ends.</p>
+<p><strong>Monotonic deque — sliding window maximum in O(n):</strong> keep indices in the deque with <em>decreasing values</em>; the front is always the current window's max; drop from the back anything smaller than the new element (it can never be a maximum while the newer, larger one is in the window), and drop from the front when it leaves the window.</p>
+<pre><code class="language-cpp">vector&lt;int&gt; slidingMax(const vector&lt;int&gt;&amp; a, int k) {
+    deque&lt;int&gt; dq; vector&lt;int&gt; res;
+    for (int i = 0; i &lt; (int)a.size(); ++i) {
+        while (!dq.empty() &amp;&amp; a[dq.back()] &lt;= a[i]) dq.pop_back();
+        dq.push_back(i);
+        if (dq.front() &lt;= i - k) dq.pop_front();
+        if (i &gt;= k - 1) res.push_back(a[dq.front()]);
+    }
+    return res;
+}
+</code></pre>
+<h2 id="124-two-pointers-and-sliding-window">12.4 Two pointers and sliding window</h2>
+<p>Instead of two nested loops (n²), move two indices monotonically (n).
+- <strong>Sorted array, pair with sum S:</strong> <code>l=0, r=n-1</code>; if sum too small, <code>++l</code> (only a bigger left helps); too big, <code>--r</code>. <em>Why correct:</em> the discarded element can't be part of any valid pair with the remaining ones.
+- <strong>Longest substring without repeated characters:</strong> window <code>[l, r]</code>; extend <code>r</code>; on a repeat, advance <code>l</code> until valid. Each pointer moves ≤ n times → O(n).</p>
+<hr />
+<h1 id="module-13-hashing-and-heaps">Module 13 — Hashing and heaps</h1>
+<h2 id="131-hash-tables">13.1 Hash tables</h2>
+<div class="callout rose">
+<div class="ct">Kid version</div>
+<p>A school with 100 lockers. To store your bag, don't search for an empty locker: compute <code>locker = (your roll number) mod 100</code>. To find it later, compute the same thing. No searching! Problem: two kids can map to the same locker — a <strong>collision</strong>.</p>
+</div>
+<p>A <strong>hash function</strong> maps a key to an index <code>h(key) mod m</code>. Lookup/insert are O(1) <em>on average</em> because you jump straight to the slot.</p>
+<p><strong>Collision strategies:</strong>
+- <strong>Chaining:</strong> each slot holds a linked list/vector of entries.
+- <strong>Open addressing:</strong> if the slot is taken, probe the next (linear probing) until a free one.</p>
+<p>Keep the <strong>load factor</strong> (items/slots) small; when too full, <strong>rehash</strong> into a bigger table (the doubling trick again → amortised O(1)).</p>
+<pre><code class="language-cpp">// A tiny hash set of ints with chaining
+struct HashSet {
+    vector&lt;vector&lt;int&gt;&gt; b;
+    HashSet(int m = 1009) : b(m) {}
+    int h(int x) const { return ((x % (int)b.size()) + b.size()) % b.size(); }
+    bool has(int x) { for (int y : b[h(x)]) if (y == x) return true; return false; }
+    void add(int x) { if (!has(x)) b[h(x)].push_back(x); }
+};
+</code></pre>
+<p><strong>Why m is often prime:</strong> if keys share a common factor with m (like multiples of 10 with m=100), they'd land in few buckets. A prime modulus spreads patterns evenly.</p>
+<p>Classic uses: <strong>two-sum</strong> (store seen values; look up <code>target − x</code>), counting frequencies, detecting duplicates, grouping anagrams (key = sorted string), <strong>prefix-sum + hash map</strong> for "number of subarrays with sum K" (count how many earlier prefix sums equal <code>current − K</code>).</p>
+<pre><code class="language-cpp">long long subarraysWithSum(const vector&lt;int&gt;&amp; a, long long K) {
+    unordered_map&lt;long long,int&gt; seen; seen[0] = 1;
+    long long pre = 0, ans = 0;
+    for (int x : a) { pre += x; ans += seen[pre - K]; seen[pre]++; }
+    return ans;
+}
+</code></pre>
+<p><em>Why it works:</em> sum(l..r) = pre[r] − pre[l−1] = K ⇔ pre[l−1] = pre[r] − K.</p>
+<div class="callout amber">
+<div class="ct">`unordered_map` anti-hack: use a custom hash with a random seed (e.g. `splitmix64` + `chrono` time), or use `map` when O(log n) is fine.</div>
+</div>
+<h2 id="132-heap-priority-queue">13.2 Heap / priority queue</h2>
+<div class="callout rose">
+<div class="ct">Kid version</div>
+<p>A hospital emergency room. Patients are served by <strong>urgency</strong>, not arrival. You always want "who's most urgent?" quickly — and new patients keep arriving.</p>
+</div>
+<p>A <strong>binary heap</strong> is a <em>complete</em> binary tree (all levels full except possibly the last, filled left to right) with the <strong>heap property</strong>: every parent ≥ its children (max-heap). The max is at the root — O(1) to read.</p>
+<p><strong>Magic: store the tree in an array</strong> — no pointers! For 0-indexed node <code>i</code>: parent <code>(i−1)/2</code>, children <code>2i+1</code>, <code>2i+2</code>. <em>Why can we?</em> "Complete" means no gaps, so the shape is implied by the count.</p>
+<pre><code>index: 0  1  2  3  4  5
+value: 9  7  8  3  5  2         9
+                              /   \
+                             7     8
+                            / \   /
+                           3   5 2
+</code></pre>
+<ul>
+<li><strong>push:</strong> put at the end, <strong>sift up</strong> (swap with parent while bigger). Height log n → O(log n).</li>
+<li><strong>pop max:</strong> move the last element to the root, <strong>sift down</strong> (swap with the larger child while smaller). O(log n).</li>
+<li><strong>build from n elements:</strong> sift down from the last parent upward — <strong>O(n)</strong>, not n log n (most nodes are near the bottom and travel little).</li>
+</ul>
+<pre><code class="language-cpp">struct MaxHeap {
+    vector&lt;int&gt; a;
+    void push(int x) {
+        a.push_back(x);
+        int i = a.size() - 1;
+        while (i &gt; 0 &amp;&amp; a[(i - 1) / 2] &lt; a[i]) { swap(a[(i - 1) / 2], a[i]); i = (i - 1) / 2; }
+    }
+    int pop() {
+        int top = a[0]; a[0] = a.back(); a.pop_back();
+        int i = 0, n = a.size();
+        while (true) {
+            int l = 2 * i + 1, r = l + 1, big = i;
+            if (l &lt; n &amp;&amp; a[l] &gt; a[big]) big = l;
+            if (r &lt; n &amp;&amp; a[r] &gt; a[big]) big = r;
+            if (big == i) break;
+            swap(a[i], a[big]); i = big;
+        }
+        return top;
+    }
+};
+</code></pre>
+<p><strong>Uses:</strong> k largest elements (keep a <em>min</em>-heap of size k), merging k sorted lists, Dijkstra, scheduling, running median (two heaps), Huffman coding.</p>
+<hr />
+<h1 id="module-14-trees">Module 14 — Trees</h1>
+<div class="callout rose">
+<div class="ct">Kid version</div>
+<p>A family tree: one ancestor on top, each person has children, no one is their own ancestor. <strong>Tree = connected, no cycles.</strong> A tree of n nodes has exactly n−1 edges.</p>
+</div>
+<p><strong>Vocabulary:</strong> root, parent/child, leaf (no children), depth (distance from root), height (longest root-to-leaf path), subtree. <strong>Binary tree:</strong> each node has ≤ 2 children (left, right).</p>
+<pre><code class="language-cpp">struct TreeNode { int val; TreeNode *left = nullptr, *right = nullptr; TreeNode(int v):val(v){} };
+</code></pre>
+<h2 id="141-traversals-and-why-theyre-recursive">14.1 Traversals — and why they're recursive</h2>
+<p>A tree is <em>self-similar</em>: each child is itself a smaller tree. So recursion is natural.</p>
+<pre><code class="language-cpp">void inorder(TreeNode* t)   { if(!t)return; inorder(t-&gt;left);  visit(t); inorder(t-&gt;right); }  // L N R
+void preorder(TreeNode* t)  { if(!t)return; visit(t); preorder(t-&gt;left); preorder(t-&gt;right); } // N L R
+void postorder(TreeNode* t) { if(!t)return; postorder(t-&gt;left); postorder(t-&gt;right); visit(t);} // L R N
+</code></pre>
+<ul>
+<li><strong>Preorder</strong> — copy a tree / serialise (parent before children).</li>
+<li><strong>Postorder</strong> — delete a tree / compute heights, sizes (children first).</li>
+<li><strong>Level order (BFS)</strong> — use a queue: process a node, push its children.</li>
+</ul>
+<pre><code class="language-cpp">int height(TreeNode* t) { return t ? 1 + max(height(t-&gt;left), height(t-&gt;right)) : 0; }
+</code></pre>
+<p><strong>Trees by recursion — the template:</strong> <em>answer for a node = combine(answer(left), answer(right), node's own value).</em> Diameter, max path sum, lowest common ancestor, "is balanced" all follow it. Each node visited once → O(n).</p>
+<h2 id="142-binary-search-tree-bst">14.2 Binary Search Tree (BST)</h2>
+<p><strong>Rule:</strong> for every node, everything in the left subtree is <strong>smaller</strong>, everything in the right is <strong>larger</strong>.</p>
+<p><em>Why this is clever:</em> searching is like binary search — at each node, one comparison discards a whole subtree. <strong>Inorder traversal of a BST visits keys in sorted order</strong> (a great test of whether a tree is a BST).</p>
+<pre><code class="language-cpp">TreeNode* insert(TreeNode* t, int x) {
+    if (!t) return new TreeNode(x);
+    if (x &lt; t-&gt;val) t-&gt;left  = insert(t-&gt;left, x);
+    else if (x &gt; t-&gt;val) t-&gt;right = insert(t-&gt;right, x);
+    return t;
+}
+bool find(TreeNode* t, int x) {
+    while (t) { if (x == t-&gt;val) return true; t = (x &lt; t-&gt;val) ? t-&gt;left : t-&gt;right; }
+    return false;
+}
+</code></pre>
+<p>Cost is O(height). Random inserts → height ≈ log n (great). <strong>Sorted inserts → a chain, height n</strong> (degenerates into a linked list!). Cure: <strong>self-balancing trees</strong> (AVL: heights of siblings differ by ≤1, repaired with <em>rotations</em>; red-black trees: looser colour rules). <code>std::set</code> / <code>std::map</code> are red-black trees, so they guarantee O(log n).</p>
+<p><em>Deletion:</em> leaf → remove; one child → replace by it; two children → replace its value with the <strong>inorder successor</strong> (smallest in the right subtree), then delete that node.</p>
+<h2 id="143-trie-prefix-tree">14.3 Trie (prefix tree)</h2>
+<p>Each edge is a character; a path from the root spells a prefix. Lookup of a word of length L costs <strong>O(L)</strong>, independent of how many words are stored.</p>
+<pre><code class="language-cpp">struct Trie {
+    struct N { int nx[26]; bool end = false; N() { fill(nx, nx + 26, -1); } };
+    vector&lt;N&gt; t{N()};
+    void add(const string&amp; s) {
+        int u = 0;
+        for (char ch : s) {
+            int c = ch - 'a';
+            if (t[u].nx[c] &lt; 0) { t[u].nx[c] = t.size(); t.push_back(N()); }
+            u = t[u].nx[c];
+        }
+        t[u].end = true;
+    }
+    bool has(const string&amp; s) {
+        int u = 0;
+        for (char ch : s) { u = t[u].nx[ch - 'a']; if (u &lt; 0) return false; }
+        return t[u].end;
+    }
+};
+</code></pre>
+<p>Use: autocomplete, spell check, longest common prefix, XOR-maximum (binary trie).</p>
+<h2 id="144-range-queries-fenwick-tree-and-segment-tree">14.4 Range queries: Fenwick tree and segment tree</h2>
+<p><strong>Problem:</strong> array with <em>updates</em> (change a[i]) <strong>and</strong> range-sum queries. Prefix sums give O(1) queries but O(n) updates. We want both fast: O(log n).</p>
+<h3 id="fenwick-tree-binary-indexed-tree">Fenwick tree (Binary Indexed Tree)</h3>
+<p>Idea: store partial sums so that any prefix is covered by ≤ log n blocks, each block's length being the <strong>lowest set bit</strong> of its index. <code>i &amp; -i</code> isolates that bit (two's complement! <code>-i</code> flips all bits and adds 1, so only the lowest set bit survives the AND).</p>
+<pre><code class="language-cpp">struct BIT {
+    int n; vector&lt;long long&gt; t;
+    BIT(int n) : n(n), t(n + 1, 0) {}
+    void add(int i, long long v) { for (++i; i &lt;= n; i += i &amp; -i) t[i] += v; }   // 0-indexed API
+    long long sum(int i) { long long s = 0; for (++i; i &gt; 0; i -= i &amp; -i) s += t[i]; return s; } // a[0..i]
+    long long range(int l, int r) { return sum(r) - (l ? sum(l - 1) : 0); }
+};
+</code></pre>
+<p><code>t[i]</code> stores the sum of the <code>lowbit(i)</code> elements ending at <code>i</code>. Going <em>down</em> (<code>i -= lowbit</code>) strips blocks from a prefix; going <em>up</em> (<code>i += lowbit</code>) visits every block that contains position i.</p>
+<h3 id="segment-tree">Segment tree</h3>
+<p>A binary tree where each node stores an <em>aggregate</em> (sum / min / max / gcd) of a segment; the root covers [0, n−1], children cover the halves. Query decomposes [l, r] into O(log n) full nodes.</p>
+<pre><code class="language-cpp">struct Seg {                       // iterative, bottom-up, point update, range sum [l, r)
+    int n; vector&lt;long long&gt; t;
+    Seg(int n) : n(n), t(2 * n, 0) {}
+    void set(int i, long long v) { for (t[i += n] = v; i &gt; 1; i &gt;&gt;= 1) t[i &gt;&gt; 1] = t[i] + t[i ^ 1]; }
+    long long query(int l, int r) {
+        long long s = 0;
+        for (l += n, r += n; l &lt; r; l &gt;&gt;= 1, r &gt;&gt;= 1) {
+            if (l &amp; 1) s += t[l++];
+            if (r &amp; 1) s += t[--r];
+        }
+        return s;
+    }
+};
+</code></pre>
+<p>With <strong>lazy propagation</strong> it also does range <em>updates</em> in O(log n). Change <code>+</code> to <code>min</code>/<code>max</code> for other queries.</p>
+<hr />
+<h1 id="module-15-graphs">Module 15 — Graphs</h1>
+<div class="callout rose">
+<div class="ct">Kid version</div>
+<p>Cities (<strong>vertices/nodes</strong>) joined by roads (<strong>edges</strong>). Roads may be one-way (<strong>directed</strong>) or have lengths (<strong>weighted</strong>). Friends on a social network, web pages and links, tasks and prerequisites — all graphs. A tree is just a graph with no cycles.</p>
+</div>
+<h2 id="151-representing-a-graph">15.1 Representing a graph</h2>
+<ul>
+<li><strong>Adjacency matrix</strong> <code>g[u][v]</code>: O(V²) memory; edge test O(1). Good only for dense/small graphs.</li>
+<li><strong>Adjacency list</strong> <code>vector&lt;vector&lt;int&gt;&gt; adj(n)</code>: memory O(V+E); iterate neighbours quickly. <strong>Use this by default.</strong></li>
+</ul>
+<pre><code class="language-cpp">int n = 5; vector&lt;vector&lt;int&gt;&gt; adj(n);
+auto addEdge = [&amp;](int u, int v){ adj[u].push_back(v); adj[v].push_back(u); };  // undirected
+// weighted: vector&lt;vector&lt;pair&lt;int,int&gt;&gt;&gt; adj; adj[u].push_back({v, w});
+</code></pre>
+<h2 id="152-bfs-explore-in-rings-shortest-path-in-unweighted-graphs">15.2 BFS — explore in rings (shortest path in unweighted graphs)</h2>
+<p>Throw a pebble into a pond: ripples spread outward one ring at a time. <strong>BFS</strong> visits all nodes at distance 1, then 2, then 3… using a <strong>queue</strong> (FIFO preserves the ring order).</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+int main() {
+    int n = 6;
+    vector&lt;vector&lt;int&gt;&gt; adj(n);
+    auto e = [&amp;](int u, int v){ adj[u].push_back(v); adj[v].push_back(u); };
+    e(0,1); e(0,2); e(1,3); e(2,3); e(3,4); e(4,5);
+    vector&lt;int&gt; dist(n, -1); queue&lt;int&gt; q;
+    dist[0] = 0; q.push(0);
+    while (!q.empty()) {
+        int u = q.front(); q.pop();
+        for (int v : adj[u]) if (dist[v] &lt; 0) { dist[v] = dist[u] + 1; q.push(v); }
+    }
+    for (int i = 0; i &lt; n; ++i) cout &lt;&lt; &quot;dist[&quot; &lt;&lt; i &lt;&lt; &quot;]=&quot; &lt;&lt; dist[i] &lt;&lt; &quot;\n&quot;;
+}
+</code></pre>
+<p><strong>Why is BFS distance the shortest?</strong> Nodes leave the queue in non-decreasing distance order (induction on rings), and a node is <em>first discovered</em> from a node of the previous ring — so its first-found distance is minimal. <strong>Mark visited when you push</strong>, not when you pop, otherwise nodes get queued many times. Cost O(V+E) — each vertex enqueued once, each edge looked at once (twice if undirected).</p>
+<p>Grid problems are graphs too: cells are nodes, 4 neighbours are edges (<code>dx[] = {1,-1,0,0}, dy[] = {0,0,1,-1}</code>).</p>
+<h2 id="153-dfs-go-deep-then-back-up">15.3 DFS — go deep, then back up</h2>
+<p><strong>DFS</strong> follows one path as far as it goes, then backtracks (the call stack <em>is</em> the stack). Like exploring a maze with chalk: mark where you've been, retrace on dead ends.</p>
+<pre><code class="language-cpp">vector&lt;vector&lt;int&gt;&gt; adj; vector&lt;char&gt; vis;
+void dfs(int u) {
+    vis[u] = 1;
+    for (int v : adj[u]) if (!vis[v]) dfs(v);
+}
+</code></pre>
+<p>Uses: <strong>connected components</strong> (call dfs from every unvisited node, count calls), cycle detection, <strong>topological sort</strong>, bridges/articulation points, SCCs, flood fill. Recursion depth can reach V (10⁵–10⁶ → stack overflow!) — use an explicit stack for huge inputs.</p>
+<p><strong>Cycle detection in a <em>directed</em> graph</strong> — three colours: white (unseen), gray (on the current recursion path), black (finished). An edge to a <strong>gray</strong> node closes a cycle.</p>
+<h2 id="154-topological-sort-ordering-with-prerequisites">15.4 Topological sort (ordering with prerequisites)</h2>
+<p>For a <strong>DAG</strong> (directed acyclic graph), order vertices so every edge <code>u→v</code> has <code>u</code> before <code>v</code> — e.g. course prerequisites. <strong>Kahn's algorithm:</strong> repeatedly take a node with <strong>in-degree 0</strong> (nothing blocks it), output it, and decrease its neighbours' in-degrees. If you output fewer than V nodes, a cycle exists (the cycle's nodes never reach in-degree 0).</p>
+<pre><code class="language-cpp">vector&lt;int&gt; topo(int n, const vector&lt;vector&lt;int&gt;&gt;&amp; adj) {
+    vector&lt;int&gt; indeg(n, 0), order;
+    for (int u = 0; u &lt; n; ++u) for (int v : adj[u]) indeg[v]++;
+    queue&lt;int&gt; q;
+    for (int i = 0; i &lt; n; ++i) if (!indeg[i]) q.push(i);
+    while (!q.empty()) {
+        int u = q.front(); q.pop(); order.push_back(u);
+        for (int v : adj[u]) if (--indeg[v] == 0) q.push(v);
+    }
+    return order;     // size &lt; n ⇒ cycle
+}
+</code></pre>
+<h2 id="155-shortest-paths-with-weights">15.5 Shortest paths with weights</h2>
+<h3 id="dijkstra-non-negative-weights">Dijkstra (non-negative weights)</h3>
+<p><strong>Idea:</strong> like BFS but "rings" by <em>distance</em>. Always finalise the unfinalised node with the smallest known distance — a <strong>min-heap</strong> gives it quickly. <em>Why correct:</em> when <code>u</code> has the smallest tentative distance, any other route to <code>u</code> must pass through some not-yet-finalised node whose distance is already ≥ <code>d[u]</code>, and weights are ≥ 0, so it can't be shorter. <strong>Negative edges break exactly this argument.</strong></p>
+<pre><code class="language-cpp">vector&lt;long long&gt; dijkstra(int src, const vector&lt;vector&lt;pair&lt;int,int&gt;&gt;&gt;&amp; adj) {
+    const long long INF = LLONG_MAX / 4;
+    vector&lt;long long&gt; d(adj.size(), INF);
+    priority_queue&lt;pair&lt;long long,int&gt;, vector&lt;pair&lt;long long,int&gt;&gt;, greater&lt;&gt;&gt; pq;
+    d[src] = 0; pq.push({0, src});
+    while (!pq.empty()) {
+        auto [du, u] = pq.top(); pq.pop();
+        if (du &gt; d[u]) continue;                 // stale entry: a better one was already processed
+        for (auto [v, w] : adj[u])
+            if (d[u] + w &lt; d[v]) { d[v] = d[u] + w; pq.push({d[v], v}); }   // relax
+    }
+    return d;
+}
+</code></pre>
+<p>Complexity: O((V+E) log V). <strong>Relaxation</strong> = "can going through u improve v?" — the core move of every shortest-path algorithm.</p>
+<h3 id="bellmanford-handles-negative-weights-relax-all-edges-v1-times-ove-why-v1-a-shortest-path-has-v1-edges-and-round-k-fixes-paths-with-k-edges-if-round-v-still-improves-something-a-negative-cycle">Bellman–Ford (handles negative weights): relax <strong>all</strong> edges V−1 times, O(VE). <em>Why V−1?</em> A shortest path has ≤ V−1 edges, and round k fixes paths with k edges. If round V still improves something → a <strong>negative cycle</strong>.</h3>
+<h3 id="floydwarshall-all-pairs-ov3-three-lines">Floyd–Warshall (all pairs): O(V³), three lines:</h3>
+<pre><code class="language-cpp">for (int k = 0; k &lt; n; ++k) for (int i = 0; i &lt; n; ++i) for (int j = 0; j &lt; n; ++j)
+    d[i][j] = min(d[i][j], d[i][k] + d[k][j]);   // allow k as an intermediate stop
+</code></pre>
+<p>(<code>k</code> <strong>must</strong> be the outermost loop — it's the DP stage: "paths using only the first k vertices as stops".)</p>
+<h2 id="156-disjoint-set-union-union-find-and-mst">15.6 Disjoint Set Union (Union-Find) and MST</h2>
+<p><strong>DSU</strong> tracks groups: <code>find(x)</code> = group leader, <code>unite(a,b)</code> = merge groups. Each group is a tree; the root is the leader. Two tricks make it nearly O(1): <strong>path compression</strong> (point everyone you pass straight at the root) and <strong>union by size</strong> (hang the smaller tree under the bigger).</p>
+<pre><code class="language-cpp">struct DSU {
+    vector&lt;int&gt; p, sz;
+    DSU(int n) : p(n), sz(n, 1) { iota(p.begin(), p.end(), 0); }
+    int find(int x) { return p[x] == x ? x : p[x] = find(p[x]); }
+    bool unite(int a, int b) {
+        a = find(a); b = find(b);
+        if (a == b) return false;
+        if (sz[a] &lt; sz[b]) swap(a, b);
+        p[b] = a; sz[a] += sz[b]; return true;
+    }
+};
+</code></pre>
+<p>Cost: O(α(n)) per operation, α = inverse Ackermann ≤ 4 for any n you'll ever meet.</p>
+<p><strong>Minimum Spanning Tree</strong> (connect all nodes with least total edge weight; V−1 edges, no cycle). <strong>Kruskal:</strong> sort edges by weight; take an edge if it connects two <em>different</em> groups (DSU). <em>Why greedy works (cut property):</em> for any split of the nodes in two sets, the cheapest edge crossing the split belongs to some MST.</p>
+<pre><code class="language-cpp">long long kruskal(int n, vector&lt;array&lt;int,3&gt;&gt;&amp; edges) {        // {w, u, v}
+    sort(edges.begin(), edges.end());
+    DSU d(n); long long total = 0;
+    for (auto [w, u, v] : edges) if (d.unite(u, v)) total += w;
+    return total;
+}
+</code></pre>
+<p><strong>Prim:</strong> grow one tree, always adding the cheapest edge leaving it (like Dijkstra with a heap).</p>
+<hr />
+<h1 id="module-16-dynamic-programming-dp">Module 16 — Dynamic Programming (DP)</h1>
+<div class="callout rose">
+<div class="ct">Kid version</div>
+<p>You're climbing stairs, 1 or 2 steps at a time. "How many ways to reach step 10?" You don't want to recount from scratch every time. Notice: to land on step 10 you came from step 9 or step 8. So <code>ways(10) = ways(9) + ways(8)</code>. <strong>Write each answer on a sticky note the first time you work it out, and reuse it.</strong> That's DP.</p>
+</div>
+<p>DP applies when a problem has:
+1. <strong>Overlapping subproblems</strong> — the same smaller question is asked again and again (naive Fibonacci recomputing <code>fib(3)</code>).
+2. <strong>Optimal substructure</strong> — the best answer is built from best answers to smaller pieces.</p>
+<p><strong>Recipe (follow it every time):</strong>
+1. <strong>State:</strong> what small set of numbers describes a subproblem? (<code>dp[i]</code> = answer for the first i items…)
+2. <strong>Transition:</strong> how does a state's answer follow from smaller states?
+3. <strong>Base cases:</strong> the tiniest states answered directly.
+4. <strong>Order:</strong> compute so that dependencies are ready (or use recursion + memo).
+5. <strong>Answer:</strong> which state(s) hold the final answer?</p>
+<h2 id="161-top-down-memoisation-vs-bottom-up-tabulation">16.1 Top-down (memoisation) vs bottom-up (tabulation)</h2>
+<pre><code class="language-cpp">// top-down: recursion + cache
+long long memo[100];
+long long fib(int n) {
+    if (n &lt; 2) return n;
+    if (memo[n]) return memo[n];
+    return memo[n] = fib(n - 1) + fib(n - 2);
+}
+// bottom-up: fill a table in order
+long long fibTab(int n) {
+    vector&lt;long long&gt; f(n + 2); f[0] = 0; f[1] = 1;
+    for (int i = 2; i &lt;= n; ++i) f[i] = f[i - 1] + f[i - 2];
+    return f[n];
+}
+</code></pre>
+<p><em>Why O(n)?</em> There are n distinct states, each computed once with O(1) work. <strong>Complexity of DP = (#states) × (work per transition).</strong> Memoisation computes only needed states and is easier to write; tabulation avoids recursion depth and is usually faster. Space optimisation: <code>fib</code> needs only the last two values → O(1) space.</p>
+<h2 id="162-classic-1-d-problems">16.2 Classic 1-D problems</h2>
+<h3 id="climbing-stairs-coin-ways-min-coins">Climbing stairs / coin ways / min coins</h3>
+<p><strong>Minimum coins</strong> to make amount <code>A</code> with coin values <code>c[]</code> (unlimited supply):
+- State: <code>dp[x]</code> = fewest coins for amount x.
+- Transition: <code>dp[x] = 1 + min over coins c of dp[x − c]</code> (the last coin used was c).
+- Base: <code>dp[0] = 0</code>; unreachable = ∞.</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+int main() {
+    vector&lt;int&gt; coins = {1, 5, 6, 9};
+    int A = 11, INF = 1e9;
+    vector&lt;int&gt; dp(A + 1, INF); dp[0] = 0;
+    for (int x = 1; x &lt;= A; ++x)
+        for (int c : coins)
+            if (x &gt;= c &amp;&amp; dp[x - c] + 1 &lt; dp[x]) dp[x] = dp[x - c] + 1;
+    cout &lt;&lt; dp[A] &lt;&lt; &quot;\n&quot;;   // 2  (5 + 6)
+}
+</code></pre>
+<div class="callout amber">
+<div class="ct">Why does greedy fail here?</div>
+<p>Greedy "take the largest coin ≤ remaining" gives 9+1+1 = 3 coins. DP tries <em>all</em> last-coin choices and so finds 5+6 = 2. Greedy works only when you can <em>prove</em> a local choice is safe (Module 17).</p>
+</div>
+<h3 id="longest-increasing-subsequence-lis">Longest Increasing Subsequence (LIS)</h3>
+<ul>
+<li>O(n²): <code>dp[i] = 1 + max dp[j]</code> for <code>j&lt;i</code> with <code>a[j]&lt;a[i]</code>.</li>
+<li><strong>O(n log n):</strong> keep <code>tails[k]</code> = smallest possible tail of an increasing subsequence of length k+1. <code>tails</code> is always sorted, so binary-search where each new element belongs (replace the first tail ≥ x).</li>
+</ul>
+<pre><code class="language-cpp">int lis(const vector&lt;int&gt;&amp; a) {
+    vector&lt;int&gt; t;
+    for (int x : a) {
+        auto it = lower_bound(t.begin(), t.end(), x);   // strictly increasing
+        if (it == t.end()) t.push_back(x); else *it = x;
+    }
+    return t.size();
+}
+</code></pre>
+<p>(<code>tails</code> is <em>not</em> the subsequence itself, only its length is meaningful.)</p>
+<h3 id="maximum-subarray-sum-kadane">Maximum subarray sum (Kadane)</h3>
+<p><code>best ending at i = max(a[i], best ending at i−1 + a[i])</code> — <em>either start fresh or extend; a negative running sum can only hurt, so drop it.</em></p>
+<pre><code class="language-cpp">long long kadane(const vector&lt;int&gt;&amp; a) {
+    long long cur = a[0], best = a[0];
+    for (size_t i = 1; i &lt; a.size(); ++i) { cur = max&lt;long long&gt;(a[i], cur + a[i]); best = max(best, cur); }
+    return best;
+}
+</code></pre>
+<h2 id="163-two-dimensional-dp">16.3 Two-dimensional DP</h2>
+<h3 id="01-knapsack">0/1 Knapsack</h3>
+<p><code>n</code> items with weight <code>w[i]</code> and value <code>v[i]</code>; capacity <code>W</code>; each item used at most once; maximise value.
+- State: <code>dp[i][c]</code> = best value using the first i items with capacity c.
+- Transition: skip item i → <code>dp[i−1][c]</code>; take it → <code>dp[i−1][c−w[i]] + v[i]</code> (if fits). Take the max.</p>
+<pre><code class="language-cpp">vector&lt;int&gt; dp(W + 1, 0);
+for (int i = 0; i &lt; n; ++i)
+    for (int c = W; c &gt;= w[i]; --c)               // BACKWARDS!
+        dp[c] = max(dp[c], dp[c - w[i]] + v[i]);
+</code></pre>
+<div class="callout amber">
+<div class="ct">Why loop `c` downward in the 1-D version?</div>
+<p><code>dp[c − w[i]]</code> must still hold the <em>previous item's</em> row. Going downward, smaller capacities haven't been overwritten yet. Going <strong>upward</strong> would reuse the item multiple times — which is actually the <em>unbounded</em> knapsack (and exactly how the coin-change loop above works).</p>
+</div>
+<h3 id="longest-common-subsequence-lcs-and-edit-distance">Longest Common Subsequence (LCS) and Edit Distance</h3>
+<p><strong>LCS</strong> of strings <code>a</code>, <code>b</code>: <code>dp[i][j]</code> = LCS of the first i chars of a and first j of b.
+- If <code>a[i−1]==b[j−1]</code>: <code>dp[i][j] = dp[i−1][j−1] + 1</code> (match them).
+- Else <code>dp[i][j] = max(dp[i−1][j], dp[i][j−1])</code> (drop one char from either).</p>
+<pre><code class="language-cpp">int lcs(const string&amp; a, const string&amp; b) {
+    int n = a.size(), m = b.size();
+    vector&lt;vector&lt;int&gt;&gt; dp(n + 1, vector&lt;int&gt;(m + 1, 0));
+    for (int i = 1; i &lt;= n; ++i)
+        for (int j = 1; j &lt;= m; ++j)
+            dp[i][j] = (a[i-1] == b[j-1]) ? dp[i-1][j-1] + 1 : max(dp[i-1][j], dp[i][j-1]);
+    return dp[n][m];
+}
+</code></pre>
+<p><strong>Edit distance</strong> (min insert/delete/replace to turn a into b): same table; <code>dp[i][0]=i</code>, <code>dp[0][j]=j</code>; match → <code>dp[i−1][j−1]</code>; else <code>1 + min(dp[i−1][j] (delete), dp[i][j−1] (insert), dp[i−1][j−1] (replace))</code>.</p>
+<h3 id="grid-paths">Grid paths</h3>
+<p><code>dp[i][j] = dp[i−1][j] + dp[i][j−1]</code> (arrive from above or from the left); with obstacles set blocked cells to 0.</p>
+<h2 id="164-other-dp-shapes-know-they-exist">16.4 Other DP shapes (know they exist)</h2>
+<ul>
+<li><strong>Interval DP:</strong> <code>dp[l][r]</code> over substrings/segments (matrix-chain multiplication, burst balloons, palindrome partitioning). Iterate by increasing length.</li>
+<li><strong>Bitmask DP:</strong> <code>dp[mask][last]</code> for n ≤ 20 (travelling salesman in O(2ⁿ·n²)). A bitmask is a subset stored as an integer.</li>
+<li><strong>Digit DP:</strong> count numbers ≤ N with a property, building digit by digit.</li>
+<li><strong>DP on trees:</strong> <code>dp[v]</code> from children (max independent set, subtree sizes).</li>
+<li><strong>DP on DAGs / shortest paths:</strong> Floyd–Warshall and Bellman–Ford are DP.</li>
+</ul>
+<div class="callout amber">
+<div class="ct">How to *find* the state</div>
+<p>Ask: "If I were standing in the middle of building the answer, what's the <em>minimum information</em> I need to know to continue, ignoring how I got here?" That information is the state. Too much → too many states; too little → wrong answers.</p>
+</div>
+<hr />
+<h1 id="module-17-greedy-bits-math-and-strings">Module 17 — Greedy, bits, math and strings</h1>
+<h2 id="171-greedy-algorithms">17.1 Greedy algorithms</h2>
+<p><strong>Greedy</strong> = at each step, take the choice that looks best <em>right now</em>, never reconsider. It's fast and simple — and <strong>only valid when you can prove it</strong>. Two standard proofs: <strong>exchange argument</strong> (swap any optimal solution toward the greedy choice without making it worse) and <strong>"greedy stays ahead"</strong>.</p>
+<p><strong>Interval scheduling</strong> — pick the max number of non-overlapping meetings. <em>Greedy: sort by </em><em>earliest finish time</em><em>, take each that starts after the last chosen finishes.</em> Why: finishing earliest leaves the most room for the rest. (Sorting by start time or shortest length is <strong>wrong</strong> — find counter-examples!)</p>
+<pre><code class="language-cpp">int maxMeetings(vector&lt;pair&lt;int,int&gt;&gt; m) {           // {start, end}
+    sort(m.begin(), m.end(), [](auto&amp; a, auto&amp; b){ return a.second &lt; b.second; });
+    int cnt = 0, last = INT_MIN;
+    for (auto [s, e] : m) if (s &gt;= last) { ++cnt; last = e; }
+    return cnt;
+}
+</code></pre>
+<p>Others: Huffman coding (merge the two least frequent), fractional knapsack (best value/weight first), Kruskal/Prim/Dijkstra (greedy with proofs), minimum platforms, jump game.</p>
+<h2 id="172-bit-manipulation">17.2 Bit manipulation</h2>
+<table>
+<thead>
+<tr>
+<th>Trick</th>
+<th>Why it works</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x &amp; (x-1)</code> clears the lowest set bit</td>
+<td>subtracting 1 flips the lowest 1 to 0 and all zeros below it to 1; AND wipes that region</td>
+</tr>
+<tr>
+<td><code>x &amp; -x</code> isolates the lowest set bit</td>
+<td><code>-x = ~x + 1</code> (two's complement)</td>
+</tr>
+<tr>
+<td>power of two ⇔ <code>x&gt;0 &amp;&amp; !(x&amp;(x-1))</code></td>
+<td>exactly one set bit</td>
+</tr>
+<tr>
+<td><code>__builtin_popcount(x)</code></td>
+<td>count of 1-bits (<code>popcountll</code> for long long)</td>
+</tr>
+<tr>
+<td><code>a ^ a = 0</code>, <code>a ^ 0 = a</code></td>
+<td>XOR cancels pairs → find the single non-duplicated number by XOR-ing all</td>
+</tr>
+<tr>
+<td>swap without temp: <code>a^=b; b^=a; a^=b</code></td>
+<td>(a curiosity; use <code>swap</code>)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Enumerate all subsets</strong> of n items by counting <code>mask</code> from 0 to 2ⁿ−1: bit i of mask says whether item i is chosen.</p>
+<pre><code class="language-cpp">for (int mask = 0; mask &lt; (1 &lt;&lt; n); ++mask)
+    for (int i = 0; i &lt; n; ++i) if (mask &gt;&gt; i &amp; 1) { /* item i in subset */ }
+</code></pre>
+<p>Use <code>1LL &lt;&lt; i</code> when i might be ≥ 31, otherwise the shift overflows an <code>int</code>.</p>
+<h2 id="173-number-theory-essentials">17.3 Number theory essentials</h2>
+<p><strong>Modular arithmetic</strong> (answers "modulo 10⁹+7"): <code>(a+b)%m</code>, <code>(a*b)%m</code> are fine termwise; <strong>subtraction</strong>: <code>((a-b)%m+m)%m</code>. <strong>Division</strong> is the odd one: use the <strong>modular inverse</strong> — by Fermat's little theorem, for prime <code>p</code>, $a^{-1}\equiv a^{p-2} \pmod p$, computed with <code>power(a, p-2, p)</code> (Module 10).</p>
+<p><strong>Sieve of Eratosthenes</strong> — all primes ≤ N in O(N log log N): cross out multiples of each prime starting from p² (smaller multiples were already crossed by smaller primes).</p>
+<pre><code class="language-cpp">vector&lt;bool&gt; sieve(int N) {
+    vector&lt;bool&gt; isP(N + 1, true); isP[0] = isP[1] = false;
+    for (long long i = 2; i * i &lt;= N; ++i)
+        if (isP[i]) for (long long j = i * i; j &lt;= N; j += i) isP[j] = false;
+    return isP;
+}
+</code></pre>
+<p><strong>Others:</strong> Euclid GCD (<code>std::__gcd</code>, <code>std::gcd</code>), <code>lcm(a,b)=a/gcd(a,b)*b</code> (divide first to avoid overflow), prime factorisation by trial division to √n, combinatorics <code>nCr</code> with factorial and inverse-factorial tables mod p, <strong>Pascal's triangle</strong> <code>C(n,r)=C(n−1,r−1)+C(n−1,r)</code>.</p>
+<h2 id="174-string-algorithms">17.4 String algorithms</h2>
+<p><strong>Problem:</strong> find pattern P (length m) in text T (length n). Naive: O(nm) — after a mismatch it forgets everything it learned.</p>
+<p><strong>KMP</strong> precomputes, for each prefix of P, the length of its longest <strong>proper prefix that is also a suffix</strong> (the "failure"/<code>lps</code> array). On a mismatch, instead of restarting, it slides P by exactly the amount that keeps the already-matched part consistent. Total O(n+m).</p>
+<pre><code class="language-cpp">vector&lt;int&gt; prefixFunction(const string&amp; s) {
+    int n = s.size(); vector&lt;int&gt; pi(n, 0);
+    for (int i = 1; i &lt; n; ++i) {
+        int k = pi[i - 1];
+        while (k &gt; 0 &amp;&amp; s[i] != s[k]) k = pi[k - 1];   // fall back to a shorter border
+        if (s[i] == s[k]) ++k;
+        pi[i] = k;
+    }
+    return pi;
+}
+// find P in T: compute prefixFunction(P + '#' + T); positions where value == |P| are matches.
+</code></pre>
+<p><em>Why O(n)?</em> <code>k</code> increases by at most 1 per character and each fall-back decreases it, so total fall-backs ≤ total increases ≤ n (amortised, like the monotonic stack).</p>
+<p><strong>Rolling hash:</strong> hash of a window updates in O(1): <code>h = h*B + c (mod M)</code>; compare hashes first, verify on match (Rabin–Karp). Use a large modulus (or two) and a random base to avoid collisions. <strong>Z-function</strong>, <strong>Manacher</strong> (all palindromes in O(n)) and <strong>suffix arrays</strong> are the next steps.</p>
+<hr />
+<h1 id="module-18-contest-toolkit-debugging-and-the-roadmap">Module 18 — Contest toolkit, debugging, and the roadmap</h1>
+<h2 id="181-a-solid-template">18.1 A solid template</h2>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+using ll = long long;
+#define all(x) (x).begin(), (x).end()
+ 
+int main() {
+    ios::sync_with_stdio(false); cin.tie(nullptr);
+    int t = 1; // cin &gt;&gt; t;
+    while (t--) {
+        int n; cin &gt;&gt; n;
+        vector&lt;ll&gt; a(n);
+        for (auto&amp; x : a) cin &gt;&gt; x;
+        // solve...
+    }
+}
+</code></pre>
+<h2 id="182-how-to-attack-a-new-problem-the-feynman-method-for-algorithms">18.2 How to attack a new problem (the Feynman method for algorithms)</h2>
+<ol>
+<li><strong>Restate</strong> it in your own words. Draw a tiny example by hand and solve it <em>as a human</em>.</li>
+<li><strong>Brute force first.</strong> What's the dumbest correct solution? Compute its complexity.</li>
+<li><strong>Check constraints</strong> (table in §9.1) — how fast must you be?</li>
+<li><strong>Find the waste.</strong> Where does brute force repeat work or look at useless candidates? Repeated work → DP/prefix sums/hashing. Search for a value → sort/binary search. Order matters → greedy/heap. Connections → graph.</li>
+<li><strong>Pattern-match the toolbox:</strong> sorting + two pointers, sliding window, prefix sums, binary search on answer, monotonic stack, BFS/DFS, DSU, DP, greedy-with-proof, bitmask.</li>
+<li><strong>Prove it</strong> (invariant / exchange argument) before coding.</li>
+<li><strong>Test edge cases:</strong> n=0/1, all equal, sorted, reverse sorted, max size, negatives, overflow.</li>
+<li><strong>Stress test:</strong> write the brute force too, generate random small inputs, compare. This finds bugs nothing else will.</li>
+</ol>
+<h2 id="183-debugging">18.3 Debugging</h2>
+<ul>
+<li><strong>Compile errors</strong>: read the <em>first</em> error only; later ones are often consequences.</li>
+<li><strong>Wrong answer</strong>: print intermediate values; shrink the failing input; assert your invariants (<code>assert(x &gt;= 0);</code>).</li>
+<li><strong>Segfault</strong>: out-of-bounds, null pointer, or infinite recursion. Compile with <code>-fsanitize=address,undefined -g</code> — it names the line.</li>
+<li><strong>TLE</strong>: recount complexity; look for hidden O(n) (<code>erase</code> on vector front, <code>string +</code>, copying vectors in a loop, <code>endl</code>).</li>
+<li><strong>Overflow</strong>: multiply as <code>long long</code>; <code>1LL * a * b</code>.</li>
+</ul>
+<h2 id="184-the-roadmap-what-to-do-next">18.4 The roadmap — what to do next</h2>
+<table>
+<thead>
+<tr>
+<th>Weeks</th>
+<th>Goal</th>
+<th>Practice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1–3</td>
+<td>Modules 0–5</td>
+<td>50 basic problems: loops, arrays, strings</td>
+</tr>
+<tr>
+<td>4–6</td>
+<td>Modules 6–9</td>
+<td>implement vector/linked list yourself; STL drills</td>
+</tr>
+<tr>
+<td>7–10</td>
+<td>Modules 10–13</td>
+<td>recursion, sorting, binary search, stacks, hashing; ~100 problems</td>
+</tr>
+<tr>
+<td>11–14</td>
+<td>Modules 14–15</td>
+<td>trees, graphs (BFS/DFS/Dijkstra/DSU)</td>
+</tr>
+<tr>
+<td>15–20</td>
+<td>Modules 16–17</td>
+<td>DP (aim for 60+ varied problems), greedy, bits</td>
+</tr>
+<tr>
+<td>ongoing</td>
+<td>contests</td>
+<td>LeetCode (Top-150), Codeforces Div 3→2, CSES Problem Set, AtCoder ABC</td>
+</tr>
+</tbody>
+</table>
+<p>Free resources worth your time: <strong>CSES Problem Set</strong> (300 classic problems), <strong>cp-algorithms.com</strong> (rigorous write-ups), <em>Introduction to Algorithms</em> (CLRS), <em>Competitive Programmer's Handbook</em> (Laaksonen, free PDF).</p>
+<div class="callout amber">
+<div class="ct">The honest truth about mastery</div>
+<p>Reading this file gives you the <em>map</em>. Mastery comes from <strong>struggling</strong> with problems: attempt for 30+ minutes before reading hints, then re-solve the same problem from a blank page a week later. If you can't reproduce a solution cold, you didn't learn it yet — you only recognised it.</p>
+</div>
+<hr />
+<h1 id="practice-sets-with-answers-hidden">Practice sets (with answers hidden)</h1>
+<div class="callout violet">
+<div class="ct">Level 1 — Basics</div>
+<ol>
+<li>Reverse the digits of an integer. 2. Count vowels in a string. 3. Check Armstrong numbers. 4. Print Pascal's triangle (n rows). 5. Find the second largest in an array without sorting.</li>
+</ol>
+<details>
+<summary>Hint for 5</summary>
+<p>Track <code>first</code> and <code>second</code>; update on each element: if <code>x&gt;first</code> then <code>second=first, first=x</code>; else if <code>x&gt;second</code> (and <code>x!=first</code>) <code>second=x</code>.</p>
+</details>
+</div>
+<div class="callout violet">
+<div class="ct">Level 2 — Core DSA</div>
+<ol>
+<li>Rotate an array by k in O(n) time and O(1) space. <em>(Hint: reverse whole, then both parts.)</em> 2. Two-sum with a hash map. 3. Merge two sorted linked lists. 4. Valid parentheses. 5. Maximum depth of a binary tree. 6. Number of islands (grid DFS/BFS). 7. Kth largest element (heap &amp; quickselect). 8. Longest substring without repeating characters.</li>
+</ol>
+</div>
+<div class="callout violet">
+<div class="ct">Level 3 — Advanced</div>
+<ol>
+<li>Dijkstra with a path print-out. 2. Detect a cycle in a directed graph and return it. 3. Longest palindromic substring in O(n²) then O(n) (Manacher). 4. Coin change (count ways). 5. Edit distance with reconstruction. 6. LCA with binary lifting (<code>up[k][v]</code> = 2ᵏ-th ancestor). 7. Count inversions with a Fenwick tree. 8. Minimum cost to connect all cities (MST).</li>
+</ol>
+</div>
+<details>
+<summary>Worked solution: Rotate array by k (Level 2 #1)</summary>
+<p>Rotating right by k: the last k elements move to the front. Reverse everything → <code>[last k reversed][first n-k reversed]</code>; reversing each part restores their internal order.</p>
+<pre><code class="language-cpp">void rotateRight(vector&lt;int&gt;&amp; a, int k) {
+    int n = a.size(); if (!n) return; k %= n;
+    reverse(a.begin(), a.end());
+    reverse(a.begin(), a.begin() + k);
+    reverse(a.begin() + k, a.end());
+}
+</code></pre>
+</details>
+<hr />
+<h1 id="appendix-a-symbol-and-keyword-glossary">Appendix A — Symbol and keyword glossary</h1>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Plain meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>compile</strong></td>
+<td>translate your text into machine code</td>
+</tr>
+<tr>
+<td><strong>variable</strong></td>
+<td>named box in memory with a type</td>
+</tr>
+<tr>
+<td><strong>type</strong></td>
+<td>tells how to read the bits in a box</td>
+</tr>
+<tr>
+<td><strong>function</strong></td>
+<td>named, reusable recipe</td>
+</tr>
+<tr>
+<td><strong>stack frame</strong></td>
+<td>a function call's private workspace</td>
+</tr>
+<tr>
+<td><strong>pointer</strong></td>
+<td>variable holding an address</td>
+</tr>
+<tr>
+<td><strong>reference</strong></td>
+<td>another name for an existing variable</td>
+</tr>
+<tr>
+<td><strong>heap</strong></td>
+<td>memory you request manually, lasts until freed</td>
+</tr>
+<tr>
+<td><strong>RAII</strong></td>
+<td>resources tied to object lifetime</td>
+</tr>
+<tr>
+<td><strong>template</strong></td>
+<td>code stencil stamped out per type</td>
+</tr>
+<tr>
+<td><strong>iterator</strong></td>
+<td>generalised pointer into a container</td>
+</tr>
+<tr>
+<td><strong>amortised</strong></td>
+<td>averaged over a whole sequence of operations</td>
+</tr>
+<tr>
+<td><strong>invariant</strong></td>
+<td>something that stays true at a specific point</td>
+</tr>
+<tr>
+<td><strong>base case</strong></td>
+<td>recursion's stopping answer</td>
+</tr>
+<tr>
+<td><strong>memoisation</strong></td>
+<td>caching results of subproblems</td>
+</tr>
+<tr>
+<td><strong>relaxation</strong></td>
+<td>improving a distance estimate via an edge</td>
+</tr>
+<tr>
+<td><strong>UB (undefined behaviour)</strong></td>
+<td>the language promises nothing — avoid</td>
+</tr>
+</tbody>
+</table>
+<h1 id="appendix-b-complexity-cheat-sheet">Appendix B — Complexity cheat sheet</h1>
+<table>
+<thead>
+<tr>
+<th>Structure</th>
+<th>Access</th>
+<th>Search</th>
+<th>Insert</th>
+<th>Delete</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Array</td>
+<td>1</td>
+<td>n</td>
+<td>n</td>
+<td>n</td>
+</tr>
+<tr>
+<td>Vector (end)</td>
+<td>1</td>
+<td>n</td>
+<td>1*</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Linked list</td>
+<td>n</td>
+<td>n</td>
+<td>1†</td>
+<td>1†</td>
+</tr>
+<tr>
+<td>Stack / Queue</td>
+<td>—</td>
+<td>n</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Hash table</td>
+<td>—</td>
+<td>1 avg</td>
+<td>1 avg</td>
+<td>1 avg</td>
+</tr>
+<tr>
+<td>BST (balanced)</td>
+<td>—</td>
+<td>log n</td>
+<td>log n</td>
+<td>log n</td>
+</tr>
+<tr>
+<td>Heap</td>
+<td>max: 1</td>
+<td>n</td>
+<td>log n</td>
+<td>log n</td>
+</tr>
+<tr>
+<td>Trie</td>
+<td>—</td>
+<td>L</td>
+<td>L</td>
+<td>L</td>
+</tr>
+<tr>
+<td>Fenwick / Segment</td>
+<td>—</td>
+<td>log n</td>
+<td>log n</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>* amortised, † given the position.</p>
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Binary search</td>
+<td>log n</td>
+</tr>
+<tr>
+<td>Merge / heap sort</td>
+<td>n log n</td>
+</tr>
+<tr>
+<td>BFS / DFS</td>
+<td>V + E</td>
+</tr>
+<tr>
+<td>Dijkstra (heap)</td>
+<td>(V + E) log V</td>
+</tr>
+<tr>
+<td>Bellman–Ford</td>
+<td>V·E</td>
+</tr>
+<tr>
+<td>Floyd–Warshall</td>
+<td>V³</td>
+</tr>
+<tr>
+<td>Kruskal</td>
+<td>E log E</td>
+</tr>
+<tr>
+<td>KMP</td>
+<td>n + m</td>
+</tr>
+<tr>
+<td>Sieve</td>
+<td>N log log N</td>
+</tr>
+</tbody>
+</table>
+<div class="callout teal">
+<div class="ct">Closing thought</div>
+<p>Feynman said: <em>"What I cannot create, I do not understand."</em> So don't just read — <strong>build</strong> every structure here from scratch at least once: a vector, a linked list, a heap, a hash table, a BST, a DSU. When you can write them cold and explain <em>why</em> each operation costs what it does, you are no longer someone who has <em>used</em> C++ — you are someone who understands it.</p>
+</div>
+</main></div>
+<script>try{mermaid.initialize({startOnLoad:true,theme:matchMedia('(prefers-color-scheme: dark)').matches?'dark':'neutral'})}catch(e){}</script>
+</body></html>
